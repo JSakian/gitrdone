@@ -38,3 +38,9 @@ local.properties
 
 # Locally stored "Eclipse launch configurations"
 *.launch
+Servers/Tomcat v8.0 Server at localhost-config/web.xml
+Servers/Tomcat v8.0 Server at localhost-config/tomcat-users.xml
+Servers/Tomcat v8.0 Server at localhost-config/server.xml
+Servers/Tomcat v8.0 Server at localhost-config/context.xml
+Servers/Tomcat v8.0 Server at localhost-config/catalina.properties
+Servers/Tomcat v8.0 Server at localhost-config/catalina.policy
