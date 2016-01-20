@@ -14,26 +14,26 @@ public class Person implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
-	String FirstName;
-	String LastName;
-	String Email;
-	String Phone;
+	String firstName;
+	String lastName;
+	String email;
+	String phone;
 	@Lob
-	String Comments;
+	String comments;
 	@ManyToOne
-	Person Event;
-	boolean Volunteer;
+	Person event;
+	boolean volunteering;
 	
 	public Person (){}
 	
-	public Person (String FirstName, String LastName, String Email, String Phone,
-			String Comments, boolean Volunteer) {
-		this.FirstName = FirstName;
-		this.LastName = LastName;
-		this.Email = Email;
-		this.Phone = Phone;
-		this.Comments = Comments;
-		this.Volunteer = Volunteer;
+	public Person (String firstName, String lastName, String email, String phone,
+			String comments, boolean volunteer) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phone = phone;
+		this.comments = comments;
+		this.volunteer = volunteer;
 	}
 
 
