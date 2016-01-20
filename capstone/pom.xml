@@ -27,13 +27,13 @@
   </build>
   
   
--<dependencyManagement>
+<dependencyManagement>
 
 
--<dependencies>
+<dependencies>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.springframework</groupId>
 
@@ -52,10 +52,10 @@
 </dependencyManagement>
 
 
--<dependencies>
+<dependencies>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.springframework</groupId>
 
@@ -64,7 +64,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.springframework</groupId>
 
@@ -73,7 +73,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.springframework</groupId>
 
@@ -82,7 +82,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.springframework</groupId>
 
@@ -91,7 +91,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.springframework</groupId>
 
@@ -100,7 +100,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>junit</groupId>
 
@@ -113,7 +113,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>javax.servlet</groupId>
 
@@ -124,7 +124,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.hibernate</groupId>
 
@@ -135,7 +135,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>mysql</groupId>
 
@@ -146,7 +146,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>com.fasterxml.jackson.core</groupId>
 
@@ -157,7 +157,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.apache.tomcat</groupId>
 
@@ -168,7 +168,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.hibernate</groupId>
 
@@ -179,7 +179,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.antlr</groupId>
 
@@ -190,7 +190,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>dom4j</groupId>
 
@@ -201,7 +201,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.hibernate.common</groupId>
 
@@ -212,7 +212,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.hibernate.javax.persistence</groupId>
 
@@ -223,7 +223,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.javassist</groupId>
 
@@ -234,7 +234,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.jboss</groupId>
 
@@ -245,7 +245,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.jboss.logging</groupId>
 
@@ -256,7 +256,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>javax.transaction</groupId>
 
@@ -267,7 +267,7 @@
 </dependency>
 
 
--<dependency>
+<dependency>
 
 <groupId>org.hibernate</groupId>
 
