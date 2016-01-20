@@ -20,7 +20,6 @@
 <load-on-startup>1</load-on-startup>
 </servlet>
 
-
 <servlet-mapping>
 <servlet-name>gitrdoneFrontController</servlet-name>
 <url-pattern>*.mvc</url-pattern>

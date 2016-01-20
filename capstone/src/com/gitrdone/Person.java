@@ -2,12 +2,14 @@ package com.gitrdone;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class Person implements Serializable {
 	
 	@Id
@@ -19,7 +21,7 @@ public class Person implements Serializable {
 	@Lob
 	String Comments;
 	@ManyToOne
-	String Event;
+	Person Event;
 	boolean Volunteer;
 	
 	public Person (){}
@@ -33,42 +35,6 @@ public class Person implements Serializable {
 		this.Comments = Comments;
 		this.Volunteer = Volunteer;
 	}
-	
-	public String getFirstName() {
-		return FirstName;
-	}
-	public void setFirstName(String firstName) {
-		FirstName = firstName;
-	}
-	public String getLastName() {
-		return LastName;
-	}
-	public void setLastName(String lastName) {
-		LastName = lastName;
-	}
-	public String getEmail() {
-		return Email;
-	}
-	public void setEmail(String email) {
-		Email = email;
-	}
-	public String getPhone() {
-		return Phone;
-	}
-	public void setPhone(String phone) {
-		Phone = phone;
-	}
-	public String getComments() {
-		return Comments;
-	}
-	public void setComments(String comments) {
-		Comments = comments;
-	}
-	public boolean isVolunteer() {
-		return Volunteer;
-	}
-	public void setVolunteer(boolean volunteer) {
-		Volunteer = volunteer;
-	}
-	
+
+
 }

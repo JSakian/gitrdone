@@ -1,6 +1,8 @@
 package com.gitrdone;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,24 +13,25 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+
 @Entity
 public class Events implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	private String EventName;
-	@Temporal(TemporalType.TIMESTAMP)
-	private String Date;
+	@Temporal (TemporalType.TIMESTAMP)
+	private Date date;
 	@Lob
 	private String Description;
 	@OneToMany
-	String Attendee;
+	ArrayList<Person> Attendee = new ArrayList<Person>();
 	
 	public Events(){}
 	
-	public Events(String EventName, String Date, String Description){
+	public Events(String EventName, Date date, String Description){
 		this.EventName = EventName;
-		this.Date = Date;
+		this.date = date;
 		this.Description = Description;
 				
 	}
@@ -41,12 +44,12 @@ public class Events implements Serializable {
 		EventName = eventName;
 	}
 
-	public String getDate() {
-		return Date;
+	public Date getDate() {
+		return date;
 	}
 
 	public void setDate(String date) {
-		Date = date;
+		date = date;
 	}
 
 	public String getDescription() {

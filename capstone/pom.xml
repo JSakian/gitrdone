@@ -25,258 +25,141 @@
       </plugin>
     </plugins>
   </build>
-  
-  
 <dependencyManagement>
-
-
-<dependencies>
-
-
-<dependency>
-
-<groupId>org.springframework</groupId>
-
-<artifactId>spring-framework-bom</artifactId>
-
-<version>4.2.3.RELEASE</version>
-
-<type>pom</type>
-
-<scope>import</scope>
-
-</dependency>
-
-</dependencies>
-
-</dependencyManagement>
-
-
-<dependencies>
-
-
-<dependency>
-
-<groupId>org.springframework</groupId>
-
-<artifactId>spring-context</artifactId>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.springframework</groupId>
-
-<artifactId>spring-webmvc</artifactId>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.springframework</groupId>
-
-<artifactId>spring-core</artifactId>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.springframework</groupId>
-
-<artifactId>spring-beans</artifactId>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.springframework</groupId>
-
-<artifactId>spring-web</artifactId>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>junit</groupId>
-
-<artifactId>junit</artifactId>
-
-<version>3.8.1</version>
-
-<scope>test</scope>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>javax.servlet</groupId>
-
-<artifactId>jstl</artifactId>
-
-<version>1.2</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.hibernate</groupId>
-
-<artifactId>hibernate-validator</artifactId>
-
-<version>5.2.2.Final</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>mysql</groupId>
-
-<artifactId>mysql-connector-java</artifactId>
-
-<version>5.1.38</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>com.fasterxml.jackson.core</groupId>
-
-<artifactId>jackson-databind</artifactId>
-
-<version>2.6.4</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.apache.tomcat</groupId>
-
-<artifactId>tomcat-dbcp</artifactId>
-
-<version>8.0.30</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.hibernate</groupId>
-
-<artifactId>hibernate-core</artifactId>
-
-<version>5.0.6.Final</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.antlr</groupId>
-
-<artifactId>antlr</artifactId>
-
-<version>3.5.2</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>dom4j</groupId>
-
-<artifactId>dom4j</artifactId>
-
-<version>1.6.1</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.hibernate.common</groupId>
-
-<artifactId>hibernate-commons-annotations</artifactId>
-
-<version>5.0.1.Final</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.hibernate.javax.persistence</groupId>
-
-<artifactId>hibernate-jpa-2.1-api</artifactId>
-
-<version>1.0.0.Final</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.javassist</groupId>
-
-<artifactId>javassist</artifactId>
-
-<version>3.20.0-GA</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.jboss</groupId>
-
-<artifactId>jandex</artifactId>
-
-<version>2.0.0.Final</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.jboss.logging</groupId>
-
-<artifactId>jboss-logging</artifactId>
-
-<version>3.3.0.Final</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>javax.transaction</groupId>
-
-<artifactId>jta</artifactId>
-
-<version>1.1</version>
-
-</dependency>
-
-
-<dependency>
-
-<groupId>org.hibernate</groupId>
-
-<artifactId>hibernate-entitymanager</artifactId>
-
-<version>5.0.6.Final</version>
-
-</dependency>
-
-</dependencies>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-framework-bom</artifactId>
+        <version>4.2.3.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  	</dependency>
+
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-webmvc</artifactId>
+  	</dependency>
+
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-core</artifactId>
+  	</dependency>
+
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-beans</artifactId>
+  	</dependency>
+
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-web</artifactId>
+  	</dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+  	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
+
+  	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>5.2.2.Final</version>
+	</dependency>
+
+  	<dependency>
+  		<groupId>mysql</groupId>
+  		<artifactId>mysql-connector-java</artifactId>
+  		<version>5.1.38</version>
+  	</dependency>
+  	
+  	<dependency>
+       <groupId>com.fasterxml.jackson.core</groupId>
+       <artifactId>jackson-databind</artifactId>
+       <version>2.6.4</version>
+    </dependency>
+    
+    <dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>tomcat-dbcp</artifactId>
+		<version>8.0.30</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>5.0.6.Final</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.antlr</groupId>
+		<artifactId>antlr</artifactId>
+		<version>3.5.2</version>
+	</dependency>
+
+	<dependency>
+		<groupId>dom4j</groupId>
+		<artifactId>dom4j</artifactId>
+		<version>1.6.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.hibernate.common</groupId>
+		<artifactId>hibernate-commons-annotations</artifactId>
+		<version>5.0.1.Final</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.hibernate.javax.persistence</groupId>
+		<artifactId>hibernate-jpa-2.1-api</artifactId>
+		<version>1.0.0.Final</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.javassist</groupId>
+		<artifactId>javassist</artifactId>
+		<version>3.20.0-GA</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.jboss</groupId>
+		<artifactId>jandex</artifactId>
+		<version>2.0.0.Final</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.jboss.logging</groupId>
+		<artifactId>jboss-logging</artifactId>
+		<version>3.3.0.Final</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>javax.transaction</groupId>
+		<artifactId>jta</artifactId>
+		<version>1.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+		<version>5.0.6.Final</version>
+	</dependency>
+	
+  </dependencies>
 
 </project>
