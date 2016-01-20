@@ -33,7 +33,7 @@ public class Person implements Serializable {
 		this.email = email;
 		this.phone = phone;
 		this.comments = comments;
-		this.volunteer = volunteer;
+		this.volunteering = volunteer;
 	}
 
 
