@@ -10,13 +10,13 @@ public class TestController {
 
 	@RequestMapping(value="/TestController")
 	public @ResponseBody String testController() {
-		return "TestViewController is working";	
+		return " The test controller is working";	
 	}
 
-	@RequestMapping(value="/lotto")
-	public ModelAndView runLottery() {
-		ModelAndView mv = new ModelAndView("lottoResults");
+//	@RequestMapping(value="/lotto")
+//	public ModelAndView runLottery() {
+//		ModelAndView mv = new ModelAndView("lottoResults");
 //		mv.addObject("lotteryParameters", new lottery())
-		return mv;
-	}
+//		return mv;
+//	}
 }
