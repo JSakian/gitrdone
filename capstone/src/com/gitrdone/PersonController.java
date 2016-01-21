@@ -25,6 +25,11 @@ public class PersonController {
 		ModelAndView mv = new ModelAndView ("attendeeForm");
 		Person attendeePerson = new Person();
 		attendeePerson.setVolunteering(false);
+		
+		/*DEBUG CODE*/
+		System.out.println(attendeePerson.isVolunteering());
+		/* ******** */
+		
 		mv.addObject("attendee", attendeePerson);
 		return mv;
 	}
@@ -33,10 +38,16 @@ public class PersonController {
 	 * @return volunteer form for Person parameter input
 	 */
 	@RequestMapping(value = "/volunteer")
+	
 	public ModelAndView volunter() {
 		ModelAndView mv = new ModelAndView ("volunteerForm");
 		Person volunteerPerson = new Person();
 		volunteerPerson.setVolunteering(true);
+		
+		/*DEBUG CODE*/
+		System.out.println(volunteerPerson.isVolunteering());
+		/* ******** */
+		
 		mv.addObject("volunteer", volunteerPerson);
 		return mv;
 	}
@@ -45,7 +56,7 @@ public class PersonController {
 	 * @return attendee or volunteer specific thank you page
 	 */
 	@RequestMapping(value = "/formSubmission")
-		public ModelAndView processPerson(Person person) {
+		public ModelAndView processPerson/*(@RequestParam*/(Person person) {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("person", person);
 		
