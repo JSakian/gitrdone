@@ -22,7 +22,15 @@ public class Person implements Serializable {
 	@Lob
 	private String comments;
 	@ManyToOne
-	Person event;
+	private Events event;
+	public Events getEvent() {
+		return event;
+	}
+
+	public void setEvent(Events event) {
+		this.event = event;
+	}
+
 	private boolean volunteering;
 	
 	public Person (){}
