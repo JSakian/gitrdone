@@ -54,6 +54,16 @@ public class PersonController {
 		
 		if (person.isVolunteering() == false) {
 			mv.setViewName("attendeeThankyou"); }
+		//TODO
+		/*this can probably be reduced to one thankyou page, or .jsp,
+		that displays a volunteer specific message depending on the value of the "volunteering" 
+		For example:
+		if volunteering then "thank you for volunteering";
+		else attendee then "RSVP received";
+		
+		the rest of the page would be information regarding the event.
+		*/
+		
 		
 		return mv;
 		//TODO 
