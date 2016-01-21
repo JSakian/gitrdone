@@ -41,9 +41,9 @@ public class PersonController {
 	 */
 	@RequestMapping(value = "/volunteer")
 	
-	public ModelAndView volunter() {
+	public ModelAndView volunter(@ModelAttribute ("volunteerPerson") Person volunteerPerson) {
 		ModelAndView mv = new ModelAndView ("volunteerForm");
-		Person volunteerPerson = new Person();
+//		Person volunteerPerson = new Person();
 		volunteerPerson.setVolunteering(true);
 		
 		/*DEBUG CODE*/
@@ -70,10 +70,10 @@ public class PersonController {
 		mv.addObject("person", person);
 		
 		if (person.isVolunteering() == true) {
-			mv.setViewName("volunteerThankyou");}
+			mv.setViewName("thankYou");}
 		
-		if (person.isVolunteering() == false) {
-			mv.setViewName("attendeeThankyou"); }
+//		if (person.isVolunteering() == false) {
+//			mv.setViewName("attendeeThankyou"); }
 		
 		return mv;
 		//TODO 
