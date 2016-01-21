@@ -5,9 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/capstone/style.css" />
 </head>
 <body>
 <div class="gd-title gd-thankyou-title">Thank You</div>
-<p>You have been subscribed to the event</p>
+<p class="gd-thankyou-description">You have been subscribed to the event</p>
 </body>
 </html>

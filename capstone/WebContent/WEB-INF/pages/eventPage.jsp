@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Event Calendar</title>
+<link rel="stylesheet" type="text/css" href="/capstone/style.css" />
 </head>
 <body>
 <%
@@ -14,7 +15,7 @@ pageContext.setAttribute("titles", titles);
 %>
 <% if (titles.length != 0) { %>
 	<c:forEach var="i" begin="0" end="<%= titles.length - 1 %>">
-		<div class="gd-title"><c:out value="${titles[i]}" /></div>
+		<div class="gd-event-title"><c:out value="${titles[i]}" /></div>
 		<div class="gd-options"><a href="attendee.mvc">RSVP</a> <a href="volunteer.mvc">Volunteer</a></div>
 	</c:forEach>
 <% } else { %>
