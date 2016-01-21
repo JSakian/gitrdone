@@ -19,10 +19,10 @@
 
 <mvc:form modelAttribute="volunteerPerson" action="formSubmission.mvc">
 	
-	<div><mvc:label path ="firstname">First Name*:</mvc:label> 
+	<div><mvc:label path ="firstName">First Name*:</mvc:label> 
 	<mvc:input path ="firstName" /></div>
 	
-	<div><mvc:label path ="lastname">Last Name*:</mvc:label> 
+	<div><mvc:label path ="lastName">Last Name*:</mvc:label> 
 	<mvc:input path ="lastName" /></div>
 	
 	<div><mvc:label path ="email">Email Address*:</mvc:label> 
