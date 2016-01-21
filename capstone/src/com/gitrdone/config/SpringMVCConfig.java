@@ -1,3 +1,4 @@
+
 package com.gitrdone.config;
 
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +15,7 @@ public class SpringMVCConfig {
 	@Bean
 	public InternalResourceViewResolver getInternalResourceViewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-		resolver.setPrefix("/WEB-INF/pages");
+		resolver.setPrefix("/WEB-INF/pages/");
 		resolver.setSuffix(".jsp");
 		return resolver;
 	}
