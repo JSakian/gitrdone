@@ -22,16 +22,10 @@ public class Person implements Serializable {
 	@Lob
 	private String comments;
 	@ManyToOne
-	private Events event;
-	public Events getEvent() {
-		return event;
-	}
-
-	public void setEvent(Events event) {
-		this.event = event;
-	}
-
+	private Events eventName;
 	private boolean volunteering;
+	
+
 	
 	public Person (){}
 	
@@ -84,6 +78,14 @@ public String getComments() {
 
 public void setComments(String comments) {
 	this.comments = comments;
+}
+
+public Events getEvent() {
+	return eventName;
+}
+
+public void setEvent(Events eventName) {
+	this.eventName = eventName;
 }
 
 public boolean isVolunteering() {

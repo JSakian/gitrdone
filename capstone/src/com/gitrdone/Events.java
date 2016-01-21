@@ -19,29 +19,29 @@ public class Events implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
-	private String EventName;
+	private String eventName;
 	@Temporal (TemporalType.TIMESTAMP)
 	private Date date;
 	@Lob
-	private String Description;
+	private String description;
 	@OneToMany
-	ArrayList<Person> Attendee = new ArrayList<Person>();
+	ArrayList<Person> attendee = new ArrayList<Person>();
 	
 	public Events(){}
 	
-	public Events(String EventName, Date date, String Description){
-		this.EventName = EventName;
+	public Events(String eventName, Date date, String description){
+		this.eventName = eventName;
 		this.date = date;
-		this.Description = Description;
+		this.description = description;
 				
 	}
 
 	public String getEventName() {
-		return EventName;
+		return eventName;
 	}
 
 	public void setEventName(String eventName) {
-		EventName = eventName;
+		eventName = eventName;
 	}
 
 	public Date getDate() {
@@ -53,11 +53,11 @@ public class Events implements Serializable {
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		description = description;
 	}
 	
 	
