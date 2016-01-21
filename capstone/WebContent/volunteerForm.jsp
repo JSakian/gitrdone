@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="gd-signup-title">Signup</div>
-<form action="/capstone/formSubmission" method="POST" class="gd-signup-form">
+<form action="/capstone/formSubmission.mvc" method="POST" class="gd-signup-form">
 	<div><label for="firstname">First Name*:</label> <input type="text" name="firstName" /></div>
 	<div><label for="lastname">Last Name*:</label> <input type="text" name="lastName" /></div>
 	<div><label for="email">Email Address*:</label> <input type="text" name="email" /></div>
