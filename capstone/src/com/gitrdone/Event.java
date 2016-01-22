@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-public class Events implements Serializable {
+public class Event implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
@@ -25,11 +25,11 @@ public class Events implements Serializable {
 	@Lob
 	private String description;
 	@OneToMany
-	ArrayList<Person> attendee = new ArrayList<Person>();
+	ArrayList<Person> attendeesAndVolunteers = new ArrayList<Person>();
 	
-	public Events(){}
+	public Event(){}
 	
-	public Events(String eventName, Date date, String description){
+	public Event(String eventName, Date date, String description){
 		this.eventName = eventName;
 		this.date = date;
 		this.description = description;
