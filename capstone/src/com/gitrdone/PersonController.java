@@ -12,7 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class PersonController {
 	
 	/**
-	 * @return attendee form for Person parameter input
+	 * 
+	 * @param attendeePerson 
+	 * @return
 	 */
 	@RequestMapping(value = "/attendee")
 	public ModelAndView attendee(@ModelAttribute ("attendeePerson") Person attendeePerson) {
@@ -22,7 +24,9 @@ public class PersonController {
 	}
 
 	/**
-	 * @return volunteer form for Person parameter input
+	 * 
+	 * @param volunteerPerson
+	 * @return
 	 */
 	@RequestMapping(value = "/volunteer")
 	public ModelAndView volunteer(@ModelAttribute ("volunteerPerson") Person volunteerPerson) {
@@ -33,7 +37,11 @@ public class PersonController {
 	}
 
 	/**
-	 * @return attendee or volunteer specific thank you page
+	 * 
+	 * @param mv
+	 * @param volunteerPerson
+	 * @param result
+	 * @return
 	 */
 	@RequestMapping(value = "/volunteerFormSubmission")
 	public ModelAndView processVolunteerPerson(ModelAndView mv,  @Valid Person volunteerPerson, BindingResult result) {
@@ -48,6 +56,13 @@ public class PersonController {
 		}
 	}
 
+	/**
+	 * 
+	 * @param mv
+	 * @param attendeePerson
+	 * @param result
+	 * @return
+	 */
 	@RequestMapping(value = "/attendeeFormSubmission")
 	public ModelAndView processAttendeePerson( ModelAndView mv,Person attendeePerson, BindingResult result) {
 		

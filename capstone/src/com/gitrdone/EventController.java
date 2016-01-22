@@ -8,7 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class EventController {
 
 	/**
-	 * @return the events page so the user may select an event
+	 * 
+	 * @return
 	 */
 	@RequestMapping(value = "/events")
 		public ModelAndView events() {
