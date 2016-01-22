@@ -19,13 +19,13 @@ public class Person implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
-	@Size(min=2, max=30)
+	@Size(min=2, max=30, message = "Please enter your first name.")
 	private String firstName = "";
-	@Size(min=2, max=30)
+	@Size(min=2, max=30, message = "Please enter your last name")
 	private String lastName  = "";
-	@Email
+	@Email(message = "Invalid email address.")
 	private String email     = "";
-	@Size(max=10)
+	@Size(min =10, max=10, message= "210*******")
 	private String phone     = "";
 	@Lob
 	private String comments  = "";
