@@ -23,9 +23,8 @@ public class PersonController {
 	 * @return attendee form for Person parameter input
 	 */
 	@RequestMapping(value = "/attendee")
-	public ModelAndView attendee() {
+	public ModelAndView attendee(@ModelAttribute ("attendeePerson") Person attendeePerson) {
 		ModelAndView mv = new ModelAndView ("attendeeForm");
-		Person attendeePerson = new Person();
 		mv.addObject("attendee", attendeePerson);
 		return mv;
 	}
