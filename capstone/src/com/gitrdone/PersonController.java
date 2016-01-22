@@ -37,7 +37,7 @@ public class PersonController {
 	 * @return volunteer form for Person parameter input
 	 */
 	@RequestMapping(value = "/volunteer")
-	public ModelAndView volunter(@ModelAttribute ("volunteerPerson") Person volunteerPerson) {
+	public ModelAndView volunteer(@ModelAttribute ("volunteerPerson") Person volunteerPerson) {
 		/*DEBUG CODE*/
 		System.out.println("**********************************************");
 		System.out.println("INSIDE /volunteer mapped method");
