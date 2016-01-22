@@ -17,7 +17,7 @@
 <!-- 	<div><label for="email">Phone:</label> <input type="text" name="phone" /></div> -->
 <!-- 	<div><label for="comments">Comments*:</label> <textarea name="comments"></textarea></div> -->
 
-<mvc:form modelAttribute="volunteerPerson" action="formSubmission.mvc">
+<mvc:form modelAttribute="volunteerPerson" action="volunteerFormSubmission.mvc">
 	
 	<div><mvc:label path ="firstName">First Name*:</mvc:label> 
 	<mvc:input path ="firstName" /></div>

@@ -26,12 +26,9 @@ public class PersonController {
 		ModelAndView mv = new ModelAndView ("attendeeForm");
 		Person attendeePerson = new Person();
 		attendeePerson.setVolunteering(false);
-		
-		
 		/*DEBUG CODE*/
-		System.out.println(attendeePerson.isVolunteering());
+		System.out.println("Volunteering = " + attendeePerson.isVolunteering() + "for attendeePerson");
 		/* ******** */
-		
 		mv.addObject("attendee", attendeePerson);
 		return mv;
 	}
@@ -40,14 +37,25 @@ public class PersonController {
 	 * @return volunteer form for Person parameter input
 	 */
 	@RequestMapping(value = "/volunteer")
-	
 	public ModelAndView volunter(@ModelAttribute ("volunteerPerson") Person volunteerPerson) {
-		ModelAndView mv = new ModelAndView ("volunteerForm");
-//		Person volunteerPerson = new Person();
-		volunteerPerson.setVolunteering(true);
-		
 		/*DEBUG CODE*/
-		System.out.println(volunteerPerson.isVolunteering());
+		System.out.println("**********************************************");
+		System.out.println("INSIDE /volunteer mapped method");
+		System.out.println("----------------------------------------------");
+		System.out.println("Volunteering is = " + volunteerPerson.isVolunteering() + " for volunteerPerson");
+		/* ******** */
+		ModelAndView mv = new ModelAndView ("volunteerForm");
+		volunteerPerson.setVolunteering(true);
+		/*DEBUG CODE*/
+		System.out.println("setting to true...");
+		System.out.println("Volunteering is now = " + volunteerPerson.isVolunteering() + " for volunteerPerson");
+		
+		volunteerPerson.setFirstName("Type in Howdy");
+		System.out.println("setting firstName to " + volunteerPerson.getFirstName());
+		
+		volunteerPerson.setLastName("Don'tChange");
+		System.out.println("setting lastName to " + volunteerPerson.getLastName());
+		System.out.println("**********************************************");
 		/* ******** */
 		
 		mv.addObject("volunteer", volunteerPerson);
@@ -64,22 +72,38 @@ public class PersonController {
 	/**
 	 * @return attendee or volunteer specific thank you page
 	 */
-	@RequestMapping(value = "/formSubmission")
-		public ModelAndView processPerson/*(@RequestParam*/(Person person) {
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("person", person);
+	@RequestMapping(value = "/volunteerFormSubmission")
+	public ModelAndView processVolunteerPerson(ModelAndView mv, @ModelAttribute ("volunteerPerson") Person volunteerPerson) {
+	
+		/*DEBUG CODE*/
+		System.out.println("**********************************************");
+		System.out.println("INSIDE /volunteerFormSubmission mapped  method");
+		System.out.println("----------------------------------------------");
+		/* ******** */
 		
-		if (person.isVolunteering() == true) {
-			mv.setViewName("thankYou");}
-		
-//		if (person.isVolunteering() == false) {
-//			mv.setViewName("attendeeThankyou"); }
+		if (volunteerPerson.isVolunteering() == true) {
+			mv.setViewName("thankYou");
+		} else {
+			mv.setViewName("debug");
+		}
+		/*DEBUG CODE*/
+		System.out.println("Volunteering is = " + volunteerPerson.isVolunteering() + " for volunteerPerson");
+		System.out.println("Expected: \"true\" \n");
+		System.out.println("Volunteer's name is = " + volunteerPerson.getFirstName());
+		System.out.println("Expected: \"Howdy\" \n");
+		System.out.println("Volunteer's name is = " + volunteerPerson.getLastName());
+		System.out.println("Expected: \"Don'tChange\"");
+		System.out.println("**********************************************");
+		/* ******** */
 		
 		return mv;
-		//TODO 
-		/*find out if you need an additional method here
-		 * or if you need an additional controller in this
-		 * controller to reroute the user to the "tryAgain.jsp" page...*/
 	}
 
+	//TODO place business logic from processVolunteerPerson method 
+	@RequestMapping(value = "/attendeeFormSubmission")
+	public ModelAndView processAttendeePerson(Person attendeePerson, ModelAndView mv) {
+		if (attendeePerson.isVolunteering() == false) {
+			mv.setViewName("thankYou"); }
+		return mv;
+	}
 }
