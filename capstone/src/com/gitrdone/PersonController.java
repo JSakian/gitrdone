@@ -1,5 +1,7 @@
 package com.gitrdone;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -34,7 +36,7 @@ public class PersonController {
 	 * @return attendee or volunteer specific thank you page
 	 */
 	@RequestMapping(value = "/volunteerFormSubmission")
-	public ModelAndView processVolunteerPerson(ModelAndView mv,  /*TODO @Valid*/ Person volunteerPerson, BindingResult result) {
+	public ModelAndView processVolunteerPerson(ModelAndView mv,  @Valid Person volunteerPerson, BindingResult result) {
 	
 		if (result.hasErrors()) {  // validation fails; can't go on
 			mv.setViewName("volunteerForm"); // allow user to retry form errors
