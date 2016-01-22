@@ -44,7 +44,7 @@ public class PersonController {
 	 * @return
 	 */
 	@RequestMapping(value = "/volunteerFormSubmission")
-	public ModelAndView processVolunteerPerson(ModelAndView mv, @ModelAttribute @Valid Person volunteerPerson, BindingResult result) {
+	public ModelAndView processVolunteerPerson(ModelAndView mv, @ModelAttribute ("volunteerPerson") @Valid Person volunteerPerson, BindingResult result) {
 	
 		if (result.hasErrors()) {  // validation fails; can't go on
 			mv.setViewName("volunteerForm"); // allow user to retry form errors
