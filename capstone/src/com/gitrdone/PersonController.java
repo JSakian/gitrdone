@@ -44,7 +44,7 @@ public class PersonController {
 	 * @return
 	 */
 	@RequestMapping(value = "/volunteerFormSubmission")
-	public ModelAndView processVolunteerPerson(ModelAndView mv,  @Valid Person volunteerPerson, BindingResult result) {
+	public ModelAndView processVolunteerPerson(ModelAndView mv, @ModelAttribute @Valid Person volunteerPerson, BindingResult result) {
 	
 		if (result.hasErrors()) {  // validation fails; can't go on
 			mv.setViewName("volunteerForm"); // allow user to retry form errors
@@ -70,7 +70,7 @@ public class PersonController {
 			mv.setViewName("attendeeForm"); // allow user to retry form errors
 			return mv;
 		} else {
-		attendeePerson.setVolunteering(false); //sohould already be false but here just as a precaution
+		attendeePerson.setVolunteering(false); //should already be false but here just as a precaution
 		mv.setViewName("thankYou");		
 		return mv;
 		}
