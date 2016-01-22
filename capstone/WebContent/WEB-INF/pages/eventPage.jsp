@@ -25,7 +25,7 @@ pageContext.setAttribute("titles", titles);
 		<div class="gd-event-title"><c:out value="${titles[i]}" /></div>
 		<div class="gd-options"><a href="attendee.mvc" id="gd-rsvp-link${i}">RSVP</a> <a href="volunteer.mvc">Volunteer</a></div>
 		<script>
-			document.getElementById("gd-rsvp-link${i}").setAttribute("href", "javascript:gdToggleForm(${i})");
+			//document.getElementById("gd-rsvp-link${i}").setAttribute("href", "javascript:gdToggleForm(${i})");
 		</script>
 		<mvc:form modelAttribute="volunteerPerson" action="volunteerFormSubmission.mvc" class="gd-rsvp" id="gd-rsvp${i}" style="display:none">
 			<div><mvc:label path ="firstName">First Name*:</mvc:label> 
