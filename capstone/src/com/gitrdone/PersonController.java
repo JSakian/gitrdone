@@ -40,13 +40,6 @@ public class PersonController {
 		return mv;
 	}
 
-//TODO use annotation for binding
-//	Attempting to use @ModelAttribute instead of addObject()
-//	@RequestMapping(value= "/volunteer")
-//	public ModelAndView volunteer(@ModelAttribute("volunteerPerson") Person volunteer) {
-//		volunteer.setVolunteering(true);
-//	}
-//	
 	/**
 	 * @return attendee or volunteer specific thank you page
 	 */
@@ -63,7 +56,6 @@ public class PersonController {
 		}
 	}
 
-	//TODO place business logic from processVolunteerPerson method 
 	@RequestMapping(value = "/attendeeFormSubmission")
 	public ModelAndView processAttendeePerson( ModelAndView mv,Person attendeePerson, BindingResult result) {
 		
