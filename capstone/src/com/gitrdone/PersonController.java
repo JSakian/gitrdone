@@ -8,16 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class PersonController {
-
-	/**
-	 * @return the events page so the user may select an event
-	 */
-	@RequestMapping(value = "/events")
-		public ModelAndView events() {
-		ModelAndView mv = new ModelAndView("eventPage");
-		//TODO What objects, if any, do I add for the eventPage.jsp?
-		return mv;
-	}
 	
 	/**
 	 * @return attendee form for Person parameter input
