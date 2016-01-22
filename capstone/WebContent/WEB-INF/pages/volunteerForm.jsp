@@ -13,7 +13,7 @@
 	<title>volunteer form</title>
 </head>
 <body>
-<div class="gd-title gd-signup-title">Signup</div>
+<div class="gd-title gd-volunteer-title">Signup</div>
 
 <!-- TODO delete commented out old form code once volunteer form is is thoroughly  debuged -->
 <!-- <form action="/capstone/formSubmission.mvc" method="POST" class="gd-signup-form"> -->
