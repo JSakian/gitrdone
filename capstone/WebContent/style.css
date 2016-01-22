@@ -2,3 +2,7 @@
 .gd-title {
 	font-size: 22em;
 }
+
+.gd-rsvp.hidden {
+	display: none;
+}
