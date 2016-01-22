@@ -27,18 +27,6 @@ pageContext.setAttribute("titles", titles);
 		<script>
 			//document.getElementById("gd-rsvp-link${i}").setAttribute("href", "javascript:gdToggleForm(${i})");
 		</script>
-		<mvc:form modelAttribute="volunteerPerson" action="volunteerFormSubmission.mvc" class="gd-rsvp" id="gd-rsvp${i}" style="display:none">
-			<div><mvc:label path ="firstName">First Name*:</mvc:label> 
-			<mvc:input path ="firstName" /></div>
-			
-			<div><mvc:label path ="lastName">Last Name*:</mvc:label> 
-			<mvc:input path ="lastName" /></div>
-			
-			<div><mvc:label path ="email">Email Address*:</mvc:label> 
-			<mvc:input path ="email" /></div>
-			
-			<div><input type="submit" value="Submit" /></div>
-		</mvc:form>
 	</c:forEach>
 <% } else { %>
 	<div class="gd-no-events">No events found.</div>
