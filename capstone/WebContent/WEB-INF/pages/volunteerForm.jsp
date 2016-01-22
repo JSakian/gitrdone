@@ -10,7 +10,7 @@
     <style type="text/css"> 
         .formFieldError {background-color: yellow} 
     </style> 
-	<title>Lotto Parameters Input</title>
+	<title>volunteer form</title>
 </head>
 <body>
 <div class="gd-title gd-signup-title">Signup</div>
