@@ -1,6 +1,7 @@
 package com.gitrdone;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,18 +15,16 @@ public class Person implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
-	private String firstName;
+	private String firstName = "";
 
-	private String lastName;
-	private String email;
-	private String phone;
+	private String lastName  = "";
+	private String email     = "";
+	private String phone     = "";
 	@Lob
-	private String comments;
+	private String comments  = "";
 	@ManyToOne
-	private Events eventName;
-	private boolean volunteering;
-	
-
+	private ArrayList<Event> attendingEvents = new ArrayList<Event>();
+	private boolean volunteering = false;
 	
 	public Person (){}
 	
@@ -80,12 +79,12 @@ public void setComments(String comments) {
 	this.comments = comments;
 }
 
-public Events getEvent() {
-	return eventName;
+public ArrayList<Event> getAttendingEvents() {
+	return attendingEvents;
 }
 
-public void setEvent(Events eventName) {
-	this.eventName = eventName;
+public void setAttendingEvents(ArrayList<Event> attendingEvents) {
+	this.attendingEvents = attendingEvents;
 }
 
 public boolean isVolunteering() {
