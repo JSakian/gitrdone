@@ -1,6 +1,7 @@
 package com.gitrdone;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,10 +26,6 @@ public class PersonController {
 	public ModelAndView attendee() {
 		ModelAndView mv = new ModelAndView ("attendeeForm");
 		Person attendeePerson = new Person();
-		attendeePerson.setVolunteering(false);
-		/*DEBUG CODE*/
-		System.out.println("Volunteering = " + attendeePerson.isVolunteering() + "for attendeePerson");
-		/* ******** */
 		mv.addObject("attendee", attendeePerson);
 		return mv;
 	}
@@ -38,26 +35,8 @@ public class PersonController {
 	 */
 	@RequestMapping(value = "/volunteer")
 	public ModelAndView volunteer(@ModelAttribute ("volunteerPerson") Person volunteerPerson) {
-		/*DEBUG CODE*/
-		System.out.println("**********************************************");
-		System.out.println("INSIDE /volunteer mapped method");
-		System.out.println("----------------------------------------------");
-		System.out.println("Volunteering is = " + volunteerPerson.isVolunteering() + " for volunteerPerson");
-		/* ******** */
-		ModelAndView mv = new ModelAndView ("volunteerForm");
-		volunteerPerson.setVolunteering(true);
-		/*DEBUG CODE*/
-		System.out.println("setting to true...");
-		System.out.println("Volunteering is now = " + volunteerPerson.isVolunteering() + " for volunteerPerson");
-		
-		volunteerPerson.setFirstName("Type in Howdy");
-		System.out.println("setting firstName to " + volunteerPerson.getFirstName());
-		
-		volunteerPerson.setLastName("Don'tChange");
-		System.out.println("setting lastName to " + volunteerPerson.getLastName());
-		System.out.println("**********************************************");
-		/* ******** */
-		
+
+		ModelAndView mv = new ModelAndView ("volunteerForm");		
 		mv.addObject("volunteer", volunteerPerson);
 		return mv;
 	}
@@ -73,37 +52,29 @@ public class PersonController {
 	 * @return attendee or volunteer specific thank you page
 	 */
 	@RequestMapping(value = "/volunteerFormSubmission")
-	public ModelAndView processVolunteerPerson(ModelAndView mv, @ModelAttribute ("volunteerPerson") Person volunteerPerson) {
+	public ModelAndView processVolunteerPerson(ModelAndView mv,  /*TODO @Valid*/ Person volunteerPerson, BindingResult result) {
 	
-		/*DEBUG CODE*/
-		System.out.println("**********************************************");
-		System.out.println("INSIDE /volunteerFormSubmission mapped  method");
-		System.out.println("----------------------------------------------");
-		/* ******** */
-		
-		if (volunteerPerson.isVolunteering() == true) {
-			mv.setViewName("thankYou");
+		if (result.hasErrors()) {  // validation fails; can't go on
+			mv.setViewName("volunteerForm"); // allow user to retry form errors
+			return mv;
 		} else {
-			mv.setViewName("debug");
-		}
-		/*DEBUG CODE*/
-		System.out.println("Volunteering is = " + volunteerPerson.isVolunteering() + " for volunteerPerson");
-		System.out.println("Expected: \"true\" \n");
-		System.out.println("Volunteer's name is = " + volunteerPerson.getFirstName());
-		System.out.println("Expected: \"Howdy\" \n");
-		System.out.println("Volunteer's name is = " + volunteerPerson.getLastName());
-		System.out.println("Expected: \"Don'tChange\"");
-		System.out.println("**********************************************");
-		/* ******** */
-		
+		volunteerPerson.setVolunteering(true);
+		mv.setViewName("thankYou");		
 		return mv;
+		}
 	}
 
 	//TODO place business logic from processVolunteerPerson method 
 	@RequestMapping(value = "/attendeeFormSubmission")
-	public ModelAndView processAttendeePerson(Person attendeePerson, ModelAndView mv) {
-		if (attendeePerson.isVolunteering() == false) {
-			mv.setViewName("thankYou"); }
+	public ModelAndView processAttendeePerson( ModelAndView mv,Person attendeePerson, BindingResult result) {
+		
+		if (result.hasErrors()) {  // validation fails; can't go on
+			mv.setViewName("attendeeForm"); // allow user to retry form errors
+			return mv;
+		} else {
+		attendeePerson.setVolunteering(false); //sohould already be false but here just as a precaution
+		mv.setViewName("thankYou");		
 		return mv;
+		}
 	}
 }
