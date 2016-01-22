@@ -17,12 +17,13 @@ function gdToggleForm(id) {
 </head>
 <body>
 <%
-String[] titles = {"A", "B", "C"};
-pageContext.setAttribute("titles", titles);
+//String[] titles = {"A", "B", "C"};
+//pageContext.setAttribute("titles", titles);
+java.util.List<com.gitrdone.Event> events = pageContext.getAttribute("events");
 %>
-<% if (titles.length != 0) { %>
-	<c:forEach var="i" begin="0" end="<%= titles.length - 1 %>">
-		<div class="gd-event-title"><c:out value="${titles[i]}" /></div>
+<% if (events.size() != 0) { %>
+	<c:forEach var="i" begin="0" end="<%= events.size() - 1 %>">
+		<div class="gd-event-title"><c:out value="${events.get(i).eventName}" /></div>
 		<div class="gd-options"><a href="attendee.mvc" id="gd-rsvp-link${i}">RSVP</a> <a href="volunteer.mvc">Volunteer</a></div>
 		<script>
 			//document.getElementById("gd-rsvp-link${i}").setAttribute("href", "javascript:gdToggleForm(${i})");
