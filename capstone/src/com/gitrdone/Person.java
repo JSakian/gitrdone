@@ -17,6 +17,8 @@ import org.hibernate.validator.constraints.Email;
 @Entity
 public class Person implements Serializable {
 	
+	private static final String NUMERALS = "0123456789";
+	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	@Size(min=2, max=30, message = "Please enter your first name.")
@@ -51,6 +53,9 @@ public String getFirstName() {
 }
 
 public void setFirstName(String firstName) {
+	if (firstName.length() > 254) {
+		throw new ValidationError("First Name must be less than 255 characters.");
+	}
 	this.firstName = firstName;
 }
 
@@ -59,6 +64,9 @@ public String getLastName() {
 }
 
 public void setLastName(String lastName) {
+	if (lastName.length() > 254) {
+		throw new ValidationError("Last Name must be less than 255 characters.");
+	}
 	this.lastName = lastName;
 }
 
@@ -67,6 +75,17 @@ public String getEmail() {
 }
 
 public void setEmail(String email) {
+	if (email.length() > 254) {
+		throw new ValidationError("Email must be less than 255 characters.");
+	}
+	if (
+		email.length() < 5 ||
+		email.indexOf("@") == -1 ||
+		email.lastIndexOf("@") != email.indexOf("@") ||
+		email.lastIndexOf(".") < email.indexOf("@")
+	) {
+		throw new ValidationError("Invalid email address");
+	}
 	this.email = email;
 }
 
@@ -75,6 +94,26 @@ public String getPhone() {
 }
 
 public void setPhone(String phone) {
+	if (phone == null) {
+		this.phone = "";
+		return;
+	}
+	String filtered = "";
+	for (int i = 0; i < phone.length(); i++) {
+		if (NUMERALS.indexOf(phone.substring(i, i + 1)) != -1) {
+			filtered += phone.substring(i, i + 1);
+		}
+	}
+	if (phone.equals("")) {
+		this.phone = "";
+		return;
+	}
+	if (
+		phone.length() < 10 ||
+		phone.length() > 13
+	) {
+		throw new ValidationError("Invalid phone number");
+	}
 	this.phone = phone;
 }
 
