@@ -9,11 +9,11 @@
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url"
-      			value="jdbc:mysql://localhost:3306/J4T1"/>
+      			value="jdbc:mysql://192.241.168.18"/>
       <property name="javax.persistence.jdbc.user"
-      			value="root"/>
+      			value="gitrdone"/>
       <property name="javax.persistence.jdbc.password"
-      			value="letmein"/>
+      			value=""/>
       <property name="javax.persistence.jdbc.driver"
       			value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.schema-generation.database.action"
