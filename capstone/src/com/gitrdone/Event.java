@@ -48,8 +48,8 @@ public class Event implements Serializable {
 		return dateAndTime;
 	}
 
-	public void setDate(String dateAndTime) {
-		dateAndTime = dateAndTime;
+	public void setDateAndTime(String dateAndTime) {
+		this.dateAndTime = dateAndTime;
 	}
 
 	public String getDescription() {
