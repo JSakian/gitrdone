@@ -48,7 +48,7 @@ public class Event implements Serializable {
 		return dateAndTime;
 	}
 
-	public void setDateAndTime(String dateAndTime) {
+	public void setDateAndTime(Date dateAndTime) {
 		this.dateAndTime = dateAndTime;
 	}
 
