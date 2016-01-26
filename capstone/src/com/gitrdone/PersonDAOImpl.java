@@ -56,31 +56,31 @@ public class PersonDAOImpl implements PersonDAO {
 		public Person find(int personId){
 			return personList.get(personId);
 		}
-		@Override
-		public List<Person> find(List<Long> personIds){
-			List<Person> persons = new ArrayList<>();
-			for(int id:personIds){
-				persons.add(personList.get(id));
-			}
-			return persons;
-		}
-		@Override
-		public List<Person> find(String email) {
-			List<Person> persons = new ArrayList<>();
-			for(Person person:personList.get(index){
-				if(email.equals(person.getEmail())){
-					persons.add(person);
-				}
-			}
-		}
-		@Override
-		public List<Person> find(boolean volunteer){
-			List<Person> persons = new ArrayList<>();
-			for(Person person:personList.contains())){
-				if(volunteer == person.isVolunteering()){
-					persons.add(person);
-				}
-			}
-		}
+//		@Override
+//		public List<Person> find(List<Long> personIds){
+//			List<Person> persons = new ArrayList<>();
+//			for(int id:personIds){
+//				persons.add(personList.get(id));
+//			}
+//			return persons;
+//		}
+//		@Override
+//		public List<Person> find(String email) {
+//			List<Person> persons = new ArrayList<>();
+//			for(Person person:personList.get(index){
+//				if(email.equals(person.getEmail())){
+//					persons.add(person);
+//				}
+//			}
+//		}
+//		@Override
+//		public List<Person> find(boolean volunteer){
+//			List<Person> persons = new ArrayList<>();
+//			for(Person person:personList.contains())){
+//				if(volunteer == person.isVolunteering()){
+//					persons.add(person);
+//				}
+//			}
+//		}
 
 }

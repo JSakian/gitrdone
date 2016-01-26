@@ -9,7 +9,7 @@
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url"
-      			value="jdbc:mysql://gitrdone.scriptingfuture.com"/>
+      			value="jdbc:mysql://questjava.org"/>
       <property name="javax.persistence.jdbc.user"
       			value="gitrdone"/>
       <property name="javax.persistence.jdbc.password"

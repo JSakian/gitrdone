@@ -19,6 +19,7 @@ public class Event implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
+	private int eventId;
 	private String eventName;
 	@Temporal (TemporalType.TIMESTAMP)
 	private Date dateAndTime;
@@ -34,6 +35,23 @@ public class Event implements Serializable {
 		this.dateAndTime = dateAndTime;
 		this.description = description;
 				
+	}
+	
+
+	public int getEventId() {
+		return eventId;
+	}
+
+	public void setEventId(int eventId) {
+		this.eventId = eventId;
+	}
+
+	public ArrayList<Person> getAttendeesAndVolunteers() {
+		return attendeesAndVolunteers;
+	}
+
+	public void setAttendeesAndVolunteers(ArrayList<Person> attendeesAndVolunteers) {
+		this.attendeesAndVolunteers = attendeesAndVolunteers;
 	}
 
 	public String getEventName() {

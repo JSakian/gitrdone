@@ -14,10 +14,10 @@ public interface PersonDAO {
 
 	public Person find(int personId);
 
-	public List<Person> find(List<Long> personId);
-
-	public List<Person> find(String email);
-
-	public List<Person> find(boolean volunteer);
+//	public List<Person> find(List<Long> personId);
+//
+//	public List<Person> find(String email);
+//
+//	public List<Person> find(boolean volunteer);
 
 }
