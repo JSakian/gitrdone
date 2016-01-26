@@ -19,6 +19,7 @@ public class Person implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
+	private long personId;
 	@Size(min=2, max=30, message = "Please enter your first name.")
 	private String firstName = "";
 	@Size(min=2, max=30, message = "Please enter your last name")
@@ -30,7 +31,7 @@ public class Person implements Serializable {
 	@Lob
 	private String comments  = "";
 	@ManyToOne(cascade = CascadeType.ALL)
-	private ArrayList<Event> attendingEvents = new ArrayList<Event>();
+	private Event event = new Event();
 	private boolean volunteering = false;
 	
 	public Person (){}
@@ -86,12 +87,12 @@ public void setComments(String comments) {
 	this.comments = comments;
 }
 
-public ArrayList<Event> getAttendingEvents() {
-	return attendingEvents;
+public Event getEvent() {
+	return event;
 }
 
-public void setAttendingEvents(ArrayList<Event> attendingEvents) {
-	this.attendingEvents = attendingEvents;
+public void setEvent(Event event) {
+	this.event = event;
 }
 
 public boolean isVolunteering() {
@@ -101,5 +102,6 @@ public boolean isVolunteering() {
 public void setVolunteering(boolean volunteering) {
 	this.volunteering = volunteering;
 }
+
 
 }
