@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 public class DBUtil {
 	
 	private static final EntityManagerFactory emf = 
-			Persistence.createEntityManagerFactory("jdbc");
+			Persistence.createEntityManagerFactory("gitrdoneEventsAndAttendeesDatabase");
 	
 	public static EntityManagerFactory getEmFactory() {
 		return emf;

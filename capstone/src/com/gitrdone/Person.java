@@ -32,9 +32,10 @@ public class Person implements Serializable {
 	@Size(min = 10, max = 10, message = "210*******")
 	private String phone = "";
 	@Lob
-	private String comments = "";
-	@ManyToOne
-	private ArrayList<Event> attendingEvents = new ArrayList<Event>();
+	private String comments  = "";
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Event event = new Event();
+
 	private boolean volunteering = false;
 
 	public Person() {
@@ -104,8 +105,7 @@ public void setPhone(String phone) {
 	}
 	
 	this.phone = phone;
-}
-
+	}
 
 	public String getComments() {
 		return comments;
@@ -115,12 +115,12 @@ public void setPhone(String phone) {
 		this.comments = comments;
 	}
 
-	public ArrayList<Event> getAttendingEvents() {
-		return attendingEvents;
+	public Event getEvent() {
+	return event;
 	}
 
-	public void setAttendingEvents(ArrayList<Event> attendingEvents) {
-		this.attendingEvents = attendingEvents;
+	public void setEvent(Event event) {
+	this.event = event;
 	}
 
 	public boolean isVolunteering() {
