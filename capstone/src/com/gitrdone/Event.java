@@ -34,10 +34,8 @@ public class Event implements Serializable {
 		this.eventName = eventName;
 		this.dateAndTime = dateAndTime;
 		this.description = description;
-				
 	}
 	
-
 	public int getEventId() {
 		return eventId;
 	}

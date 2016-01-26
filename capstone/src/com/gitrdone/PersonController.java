@@ -31,7 +31,7 @@ public class PersonController {
 	@RequestMapping(value = "/volunteer")
 	public ModelAndView volunteer(@ModelAttribute ("volunteerPerson") Person volunteerPerson) {
 
-		ModelAndView mv = new ModelAndView ("volunteerForm");		
+		ModelAndView mv = new ModelAndView ("volunteerForm", "param", new Person());		
 		mv.addObject("volunteer", volunteerPerson);
 		return mv;
 	}

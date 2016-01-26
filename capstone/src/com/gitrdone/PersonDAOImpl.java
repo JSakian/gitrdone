@@ -3,84 +3,115 @@ package com.gitrdone;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
 
-@Repository
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class PersonDAOImpl implements PersonDAO {
 
-		List<Person> personList;
-	
-		public PersonDAOImpl() {
-			Person person1 = new Person();
-			person1.setPersonId(1);
-			person1.setFirstName("Happy");
-			person1.setLastName("Gilmore");
-			person1.setEmail("HappyHappy@gmail.com");
-			person1.setComments("Ready to volunteer");
-			person1.setPhone("2101234567");
-			person1.setVolunteering(true);
-			
-			Person person2 = new Person();
-			person2.setPersonId(2);
-			person2.setFirstName("Billy");
-			person2.setLastName("Madison");
-			person2.setEmail("radioShow@gmail.com");
-			person2.setComments("Ready to ROCK!");
-			person2.setPhone("2102234568");
-			person2.setVolunteering(false);
-			
-			personList.add(person1);
-			personList.add(person2);
-			
-		}
+		@Autowired
+		EntityManagerFactory emf;
+		
 		@Override
-		public void insert(Person person){
-			personList.add(person);
+		public boolean create(Person obj){
+			System.out.println("In PersonDAOImpl.create()");
+			EntityManager em = emf.createEntityManager();
+			EntityTransaction trans = em.getTransaction();
+			boolean result = true;  // optimistic
 			
-		}
-		@Override
-		public void update(Person person){
-			personList.add(person);
-		}
-		@Override
-		public void update(List<Person> persons){
-			for(Person person:persons){
-				update(person);
+			try {
+			System.out.println("In PersonADaoJpaImpl.create()" + trans);
+				trans.begin();
+				em.persist(obj);
+				trans.commit();
 			}
+			 catch (Exception ex) {
+				trans.rollback();
+				System.out.println("Rollback due to [" + ex + "]");
+				result = false;
+			}
+			finally {
+				em.close();
+			}
+			return result;
+			
 		}
 		@Override
-		public void delete(int personId){
-			personList.remove(personId);
+		public Person findById(long personId){
+			EntityManager em = emf.createEntityManager();
+	        Person obj = null;
+			
+			try {
+				obj = em.find(Person.class, 1L);
+	    	    }
+			 catch (Exception ex) {
+				System.out.println("SQL Error [" + ex + "]");
+			}
+			finally {
+				em.close();
+			}
+			return obj;
+			
 		}
 		@Override
-		public Person find(int personId){
-			return personList.get(personId);
+		public List<Person> getAll(){
+			EntityManager em = emf.createEntityManager();
+			List<Person> result = new ArrayList<>();
+			TypedQuery<Person> query = em.createQuery("SELECT e FROM EntityA e",Person.class);
+		    List<Person> results =(List<Person>)query.getResultList( );
+		    if (results != null && !results.isEmpty()) {
+		    	return results;
+		    }
+		    else
+		    	return null;
+			
 		}
-//		@Override
-//		public List<Person> find(List<Long> personIds){
-//			List<Person> persons = new ArrayList<>();
-//			for(int id:personIds){
-//				persons.add(personList.get(id));
-//			}
-//			return persons;
-//		}
-//		@Override
-//		public List<Person> find(String email) {
-//			List<Person> persons = new ArrayList<>();
-//			for(Person person:personList.get(index){
-//				if(email.equals(person.getEmail())){
-//					persons.add(person);
-//				}
-//			}
-//		}
-//		@Override
-//		public List<Person> find(boolean volunteer){
-//			List<Person> persons = new ArrayList<>();
-//			for(Person person:personList.contains())){
-//				if(volunteer == person.isVolunteering()){
-//					persons.add(person);
-//				}
-//			}
-//		}
+		@Override
+		public boolean update(Person obj){
+			EntityManager em = emf.createEntityManager();
+			EntityTransaction trans = em.getTransaction();
+			boolean result = true;
+			
+			try {
+				trans.begin();
+				em.merge(obj);
+				trans.commit();
+			}
+			 catch (Exception ex) {
+				trans.rollback();
+				System.out.println("Rollback due to [" + ex + "]");
+				result = false;
+			}
+			finally {
+				em.close();
+			}
+			return result;
+
+			
+		}
+		public boolean delete(Person obj){
+			EntityManager em = emf.createEntityManager();
+			EntityTransaction trans = em.getTransaction();
+			boolean result = true;
+			
+			try {
+				trans.begin();
+				em.remove(obj);
+				trans.commit();
+			}
+			 catch (Exception ex) {
+				trans.rollback();
+				System.out.println("Rollback due to [" + ex + "]");
+				result = false;
+			}
+			finally {
+				em.close();
+			}
+			return result;
+			
+		}
 
 }

@@ -22,7 +22,7 @@ public class Person implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int personId;
+	private long personId;
 	@Size(min = 2, max = 30, message = "Please enter your first name.")
 	private String firstName = "";
 	@Size(min = 2, max = 30, message = "Please enter your last name")
@@ -40,7 +40,7 @@ public class Person implements Serializable {
 	public Person() {
 	}
 
-	public Person(int personId, String firstName, String lastName, String email,
+	public Person(long personId, String firstName, String lastName, String email,
 			String phone, String comments, boolean volunteer) {
 		this.personId = personId;
 		this.firstName = firstName;
@@ -55,7 +55,7 @@ public class Person implements Serializable {
 		return personId;
 	}
 
-	public void setPersonId(int personId) {
+	public void setPersonId(long personId) {
 		this.personId = personId;
 	}
 
