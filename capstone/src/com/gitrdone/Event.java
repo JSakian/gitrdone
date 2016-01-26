@@ -22,7 +22,7 @@ public class Event implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
-	private long eventId;
+	private int eventId;
 	private String eventName;
 	@Temporal (TemporalType.TIMESTAMP)
 	private Date dateAndTime; 
@@ -40,6 +40,23 @@ public class Event implements Serializable {
 		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		
 		this.dateAndTime = timeFormat.parse(dateAndTime);
+	}
+	
+
+	public int getEventId() {
+		return eventId;
+	}
+
+	public void setEventId(int eventId) {
+		this.eventId = eventId;
+	}
+
+	public ArrayList<Person> getAttendeesAndVolunteers() {
+		return attendeesAndVolunteers;
+	}
+
+	public void setAttendeesAndVolunteers(ArrayList<Person> attendeesAndVolunteers) {
+		this.attendeesAndVolunteers = attendeesAndVolunteers;
 	}
 
 	public String getEventName() {

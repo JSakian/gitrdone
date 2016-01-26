@@ -83,5 +83,4 @@ public class EventController {
 				em.close(); 
 		 		} 
 				} 
-
 }
