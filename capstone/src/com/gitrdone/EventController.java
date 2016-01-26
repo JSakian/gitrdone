@@ -22,7 +22,7 @@ public class EventController {
 		public ModelAndView processEvents() {
 		ModelAndView mv = new ModelAndView(""
 				/* ******** */
-				+ "eventPage"
+				+ "thankYou"
 				/*DEBUG CODE*/
 				+ "");
 		

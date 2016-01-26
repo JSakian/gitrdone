@@ -51,10 +51,6 @@ public class Event implements Serializable {
 		this.eventId = eventId;
 	}
 
-	public ArrayList<Person> getAttendeesAndVolunteers() {
-		return attendeesAndVolunteers;
-	}
-
 	public void setAttendeesAndVolunteers(ArrayList<Person> attendeesAndVolunteers) {
 		this.attendeesAndVolunteers = attendeesAndVolunteers;
 	}
@@ -71,7 +67,7 @@ public class Event implements Serializable {
 		return dateAndTime;
 	}
 
-	public void setDate(String dateAndTime) throws ParseException{
+	public void setDateAndTime(String dateAndTime) throws ParseException{
 		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		this.dateAndTime = timeFormat.parse(dateAndTime);
 	}
@@ -82,5 +78,13 @@ public class Event implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public List<Person> getAttendeesAndVolunteers() {
+		return attendeesAndVolunteers;
+	}
+
+	public void setAttendeesAndVolunteers(List<Person> attendeesAndVolunteers) {
+		this.attendeesAndVolunteers = attendeesAndVolunteers;
 	}
 }
