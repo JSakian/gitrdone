@@ -29,18 +29,18 @@ public class PersonDAOImpl implements PersonDAO {
 			person2.setPhone("2102234568");
 			person2.setVolunteering(false);
 			
-			personList.put(person1.getPersonId(), person1);
-			personList.put(person2.getPersonId(), person2);
+			personList.add(person1);
+			personList.add(person2);
 			
 		}
 		@Override
 		public void insert(Person person){
-			personList.put(person.getPersonId(), person);
+			personList.add(person);
 			
 		}
 		@Override
 		public void update(Person person){
-			personList.put(person.getPersonId(), person);
+			personList.add(person);
 		}
 		@Override
 		public void update(List<Person> persons){
@@ -59,7 +59,7 @@ public class PersonDAOImpl implements PersonDAO {
 		@Override
 		public List<Person> find(List<Long> personIds){
 			List<Person> persons = new ArrayList<>();
-			for(Long id:personIds){
+			for(int id:personIds){
 				persons.add(personList.get(id));
 			}
 			return persons;
@@ -67,7 +67,7 @@ public class PersonDAOImpl implements PersonDAO {
 		@Override
 		public List<Person> find(String email) {
 			List<Person> persons = new ArrayList<>();
-			for(Person person:personList.values()){
+			for(Person person:personList.get(index){
 				if(email.equals(person.getEmail())){
 					persons.add(person);
 				}
@@ -76,7 +76,7 @@ public class PersonDAOImpl implements PersonDAO {
 		@Override
 		public List<Person> find(boolean volunteer){
 			List<Person> persons = new ArrayList<>();
-			for(Person person:personList.values()){
+			for(Person person:personList.contains())){
 				if(volunteer == person.isVolunteering()){
 					persons.add(person);
 				}
