@@ -65,7 +65,7 @@
 		</div>
 
 		<div class="row">
-
+<%-- <mvc:form modelAttribute="parms" action="result.mvc"> --%>
 			<mvc:form modelAttribute="volunteerPerson"
 				action="volunteerFormSubmission.mvc" class="form-horizontal">
 				<div class="form-group">

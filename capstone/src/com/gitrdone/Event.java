@@ -16,32 +16,40 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
 @Entity
 public class Event implements Serializable {
-	
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int eventId;
 	private String eventName;
-	@Temporal (TemporalType.TIMESTAMP)
-	private Date dateAndTime; 
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dateAndTime;
 	@Lob
 	private String description;
 	@OneToMany
 	List<Person> attendeesAndVolunteers = new ArrayList<Person>();
-	
-	public Event(){}
-	
-	public Event(String eventName, String dateAndTime, String description) throws ParseException{
+
+	public Event() {
+	}
+
+	public Event(String eventName, String dateAndTime, String description)
+			throws ParseException {
 		this.eventName = eventName;
 		this.description = description;
 
 		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		
 
 	}
-	
+
+	public void setDateAndTime(Date dateAndTime) {
+		this.dateAndTime = dateAndTime;
+	}
+
+	public void setAttendeesAndVolunteers(List<Person> attendeesAndVolunteers) {
+		this.attendeesAndVolunteers = attendeesAndVolunteers;
+	}
+
 	public int getEventId() {
 		return eventId;
 	}
@@ -50,11 +58,8 @@ public class Event implements Serializable {
 		this.eventId = eventId;
 	}
 
-	public ArrayList<Person> getAttendeesAndVolunteers() {
-		return attendeesAndVolunteers;
-	}
-
-	public void setAttendeesAndVolunteers(ArrayList<Person> attendeesAndVolunteers) {
+	public void setAttendeesAndVolunteers(
+			ArrayList<Person> attendeesAndVolunteers) {
 		this.attendeesAndVolunteers = attendeesAndVolunteers;
 	}
 
@@ -70,7 +75,7 @@ public class Event implements Serializable {
 		return dateAndTime;
 	}
 
-	public void setDate(String dateAndTime) throws ParseException{
+	public void setDate(String dateAndTime) throws ParseException {
 		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		this.dateAndTime = timeFormat.parse(dateAndTime);
 	}
