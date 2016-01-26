@@ -3,6 +3,9 @@ package com.gitrdone;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,21 +22,24 @@ public class Event implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
+	private long eventId;
 	private String eventName;
 	@Temporal (TemporalType.TIMESTAMP)
-	private Date dateAndTime;
+	private Date dateAndTime; 
 	@Lob
 	private String description;
 	@OneToMany
-	ArrayList<Person> attendeesAndVolunteers = new ArrayList<Person>();
+	List<Person> attendeesAndVolunteers = new ArrayList<Person>();
 	
 	public Event(){}
 	
-	public Event(String eventName, Date dateAndTime, String description){
+	public Event(String eventName, String dateAndTime, String description) throws ParseException{
 		this.eventName = eventName;
-		this.dateAndTime = dateAndTime;
 		this.description = description;
-				
+
+		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		
+		this.dateAndTime = timeFormat.parse(dateAndTime);
 	}
 
 	public String getEventName() {
@@ -41,15 +47,16 @@ public class Event implements Serializable {
 	}
 
 	public void setEventName(String eventName) {
-		eventName = eventName;
+		this.eventName = eventName;
 	}
 
 	public Date getDateAndTime() {
 		return dateAndTime;
 	}
 
-	public void setDate(String dateAndTime) {
-		dateAndTime = dateAndTime;
+	public void setDate(String dateAndTime) throws ParseException{
+		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		this.dateAndTime = timeFormat.parse(dateAndTime);
 	}
 
 	public String getDescription() {
@@ -57,6 +64,6 @@ public class Event implements Serializable {
 	}
 
 	public void setDescription(String description) {
-		description = description;
+		this.description = description;
 	}
 }
