@@ -16,13 +16,13 @@ public class EventController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/events")
-		public ModelAndView events() {
-		ModelAndView mv = new ModelAndView("eventPage");
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jdbc");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		mv.addObject("events", entityManager.createQuery("SELECT e FROM Event e").getResultList());
-		return mv;
-	}
+//	@RequestMapping(value = "/events")
+//		public ModelAndView events() {
+//		ModelAndView mv = new ModelAndView("eventPage");
+//		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jdbc");
+//		EntityManager entityManager = entityManagerFactory.createEntityManager();
+//		mv.addObject("events", entityManager.createQuery("SELECT e FROM Event e").getResultList());
+//		return mv;
+//	}
 	
 }
