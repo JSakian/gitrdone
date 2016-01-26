@@ -19,7 +19,7 @@ function gdToggleForm(id) {
 <%
 //String[] titles = {"A", "B", "C"};
 //pageContext.setAttribute("titles", titles);
-java.util.List<com.gitrdone.Event> events = pageContext.getAttribute("events");
+java.util.List<com.gitrdone.Event> events = (java.util.List<com.gitrdone.Event>)pageContext.getAttribute("events");
 %>
 <% if (events.size() != 0) { %>
 	<c:forEach var="i" begin="0" end="<%= events.size() - 1 %>">
