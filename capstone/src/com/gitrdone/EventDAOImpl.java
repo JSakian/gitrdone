@@ -30,14 +30,19 @@ public class EventDAOImpl implements EventDAOIntf {
 
 	@Override
 	public Event findById(long eventId) {
-		return emf.createEntityManager().find(Event.class, 1L);
+		EntityManager em = emf.createEntityManager();
+		Event event = em.find(Event.class, 1L);
+		em.close();
+		return event;
 	}
 
 	@Override
 	public List<Event> getAll() {
 		System.out.println("In EventDAOImpl.getAll()");
-	    return emf.createEntityManager().createQuery(
-	    		"SELECT e FROM Event e", Event.class).getResultList();
+		EntityManager em = emf.createEntityManager();
+		List<Event> events = em.createQuery("SELECT e FROM Event e", Event.class).getResultList();
+		em.close();
+	    return events;
 	}
 
 	@Override
@@ -50,6 +55,7 @@ public class EventDAOImpl implements EventDAOIntf {
 		em.merge(obj);
 		trans.commit();
 		System.out.println("Event " + obj.getEventName() + " updated successfully");
+		em.close();
 	}
 
 	@Override
@@ -62,6 +68,7 @@ public class EventDAOImpl implements EventDAOIntf {
 		em.remove(obj);
 		trans.commit();
 		System.out.println("Event " + obj.getEventName() + " deleted successfully");
+		em.close();
 	}
 
 

@@ -35,12 +35,12 @@ public class SpringMVCConfig {
 	
 	
 	@Bean
-	public PersonDAOImpl getPersonDAO() {
+	public PersonDAOImpl getPersonDAOImpl() {
 		return new PersonDAOImpl();
 	}
 	
 	@Bean
-	public EventDAOImpl getEventDAO() {
+	public EventDAOImpl getEventDAOImpl() {
 		return new EventDAOImpl();
 	}
 
