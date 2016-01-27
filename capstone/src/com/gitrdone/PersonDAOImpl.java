@@ -10,7 +10,7 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class PersonDAOImpl implements PersonDAO {
+public class PersonDAOImpl implements PersonDAOIntf {
 
 		@Autowired
 		EntityManagerFactory emf;
@@ -33,7 +33,7 @@ public class PersonDAOImpl implements PersonDAO {
 			}
 			finally {
 				em.close();
-				System.out.println("Person inserted successfully");
+				System.out.println("Person " + obj.getEmail() + " inserted successfully");
 			}
 		}
 	//TODO delete for cleanup if not needed
@@ -85,10 +85,10 @@ public class PersonDAOImpl implements PersonDAO {
 			}
 			finally {
 				em.close();
-				System.out.println("Person updated successfully");
+				System.out.println("Person " + obj.getEmail() + " updated successfully");
 			}
 		}
-		
+		@Override
 		public void delete(Person obj){
 			EntityManager em = emf.createEntityManager();
 			EntityTransaction trans = em.getTransaction();
@@ -105,7 +105,7 @@ public class PersonDAOImpl implements PersonDAO {
 			}
 			finally {
 				em.close();
-				System.out.println("Person updated successfully");
+				System.out.println("Event " + obj.getEmail() + " deleted successfully");
 			}
 		}
 
