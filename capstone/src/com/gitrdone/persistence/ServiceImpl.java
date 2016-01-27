@@ -12,9 +12,6 @@ import com.gitrdone.PersonDAOImpl;
 
 public class ServiceImpl implements ServiceIntf {
 	
-	@Autowired
-	EntityManagerFactory emf;
-	
 	@Autowired 
 	PersonDAOImpl persons;
 	
