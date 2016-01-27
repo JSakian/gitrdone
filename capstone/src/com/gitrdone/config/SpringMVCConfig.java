@@ -1,6 +1,9 @@
 
 package com.gitrdone.config;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.context.annotation.ComponentScan;
@@ -22,6 +25,15 @@ public class SpringMVCConfig {
 		resolver.setSuffix(".jsp");
 		return resolver;
 	}
+	
+	@Bean
+	EntityManagerFactory getEntityManagerFactory() {
+		EntityManagerFactory emf = 
+				Persistence.createEntityManagerFactory("gitrdonePersistanceUnit");
+		return emf;
+	}
+	
+	
 	@Bean
 	public PersonDAOImpl getPersonDAO() {
 		return new PersonDAOImpl();
