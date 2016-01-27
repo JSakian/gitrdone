@@ -9,13 +9,17 @@ import javax.persistence.EntityTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.gitrdone.Event;
+import com.gitrdone.EventDAOImpl;
 
 public class TestStuff {
 
 	@Autowired
+	EventDAOImpl EventDAO;
+	
+	@Autowired
 	EntityManagerFactory emf;
 
-	void populateEventTable() {
+	public void populateEventTable() {
 		try {
 			// create name, date, description
 			Event event1 = new Event ("Taco Party", "2015-01-31 13:00",
@@ -26,19 +30,24 @@ public class TestStuff {
 			Event event2 = new Event ("Pool Noodle Bananza", "2001-01-20 12:30",
 					  				  "Who new pool noodles were so versitl? " +
 					  				  "Come join others for our 40 hour workshop!");
-		
+	
+			Event event3 = new Event ("DAO Dinner", "2018-15-15 01:45",
+									  "Who new pool noodles were so versitl? " +
+									  "Come join others for our 40 hour workshop!");
+
 			persistEvent(event1);
 			persistEvent(event2);	
+			EventDAO.insert(event3);
 			}
 			catch (ParseException ex){
-				return mv;
+				System.out.println("there's an exception: " + ex);
 				
 			} 
 			
 			finally {
-				return mv;
+				System.out.println("was there an exception?");
 			}
-			
+			}
 		
 		private void persistEvent(Event event) { 
 					
@@ -59,12 +68,6 @@ public class TestStuff {
 			finally { 
 			em.close(); 
 	 		} 
-			} 
-		
-	}
-
-		
-		
-		
-	}
+		} 
 }
+

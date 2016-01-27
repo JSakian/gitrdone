@@ -7,24 +7,31 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.gitrdone.config.TestStuff;
+
 @Controller
 public class EventController {
 
+	@Autowired
+	
 	/**
 	 * 
 	 * @return
 	 */
 	@RequestMapping(value = "/events")
 		public ModelAndView processEvents() {
+		
+		
 		ModelAndView mv = new ModelAndView("eventPage");
 		
 			
-			
-			Test.populateEventTable();
+		TestStuff TestStuffobj = new TestStuff();
+		TestStuffobj.populateEventTable();
 			
 			
 			
@@ -39,14 +46,7 @@ public class EventController {
 					  				  "Who new pool noodles were so versitl? " +
 					  				  "Come join others for our 40 hour workshop!");
 		
-			Event event3 = new Event ("Pool Noodle Bananza", "2001-01-20 12:30",
-	  				  				  "Who new pool noodles were so versitl? " +
-	  				  				  "Come join others for our 40 hour workshop!");
-			
-			persistEvent(event1);
-			persistEvent(event2);	
-			new EventDAOImpl.
-			
+
 			
 			mv.addObject("events", em.createQuery("SELECT e FROM Event e").getResultList());
 			

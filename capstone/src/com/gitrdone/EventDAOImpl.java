@@ -11,7 +11,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class EventDAOImpl implements EventDAOIntf {
-
+	
 	@Autowired
 	EntityManagerFactory emf;
 	

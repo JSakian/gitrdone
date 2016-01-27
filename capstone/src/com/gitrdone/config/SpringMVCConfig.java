@@ -33,7 +33,6 @@ public class SpringMVCConfig {
 		return emf;
 	}
 	
-	
 	@Bean
 	public PersonDAOImpl getPersonDAOImpl() {
 		return new PersonDAOImpl();
@@ -44,4 +43,5 @@ public class SpringMVCConfig {
 		return new EventDAOImpl();
 	}
 
+	
 }
