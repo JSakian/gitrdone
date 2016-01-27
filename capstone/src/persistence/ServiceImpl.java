@@ -10,7 +10,7 @@ import com.gitrdone.Event;
 import com.gitrdone.EventDAOImpl;
 import com.gitrdone.PersonDAOImpl;
 
-public class SerivceImpl implements ServiceInt {
+public class ServiceImpl implements ServiceIntf {
 	
 	@Autowired
 	EntityManagerFactory emf;
