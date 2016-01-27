@@ -12,6 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.gitrdone.EventDAOImpl;
 import com.gitrdone.PersonDAOImpl;
+import com.gitrdone.persistence.ServiceImpl;
 
 @Configuration
 @EnableWebMvc
@@ -43,5 +44,8 @@ public class SpringMVCConfig {
 		return new EventDAOImpl();
 	}
 
-	
+	@Bean
+	public ServiceImpl getServiceImpl() {
+		return new ServiceImpl();
+	}
 }
