@@ -1,4 +1,4 @@
-package persistence;
+package com.gitrdone.persistence;
 
 import java.util.List;
 
