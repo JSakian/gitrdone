@@ -20,17 +20,14 @@ public class EventController {
 	 */
 	@RequestMapping(value = "/events")
 		public ModelAndView processEvents() {
-		ModelAndView mv = new ModelAndView(""
-				/* ******** */
-				+ "events"
-				/*DEBUG CODE*/
-				+ "");
+		ModelAndView mv = new ModelAndView("eventPage");
 		
-		EntityManagerFactory entityManagerFactory = DBUtil.getEmFactory();
-		EntityManager em = entityManagerFactory.createEntityManager();
-		
-		
-		//TODO get api for java.util.Date;
+			
+			
+			Test.populateEventTable();
+			
+			
+			
 			try {
 			// create name, date, description
 			Event event1 = new Event ("Taco Party", "2015-01-31 13:00",
@@ -42,9 +39,14 @@ public class EventController {
 					  				  "Who new pool noodles were so versitl? " +
 					  				  "Come join others for our 40 hour workshop!");
 		
+			Event event3 = new Event ("Pool Noodle Bananza", "2001-01-20 12:30",
+	  				  				  "Who new pool noodles were so versitl? " +
+	  				  				  "Come join others for our 40 hour workshop!");
+			
 			persistEvent(event1);
 			persistEvent(event2);	
-				
+			new EventDAOImpl.
+			
 			
 			mv.addObject("events", em.createQuery("SELECT e FROM Event e").getResultList());
 			
