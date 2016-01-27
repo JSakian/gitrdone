@@ -64,32 +64,29 @@
 		<div class="row">
 
 			<mvc:form modelAttribute="volunteerPerson"
-				action="volunteerFormSubmission.mvc" class="gd-form">
-				<div>
-					<p class="text-center">
-						<mvc:label path="firstName">First Name*:</mvc:label>
-						<mvc:input path="firstName" cssErrorClass="formFieldError"
-							placeholder="John" />
+				action="volunteerFormSubmission.mvc" class="form-horizontal">
+				<div class="form-group">
+						<mvc:label path="firstName" class="col-sm-2 control-label">First Name*:</mvc:label>
+						<div class="col-sm-8">
+						<mvc:input path="firstName" cssErrorClass="formFieldError" placeholder= "John" class="form-control"/>
 						<mvc:errors path="firstName" />
-					</p>
+						</div>
 				</div>
 
-				<div>
-					<p class="text-center">
-						<mvc:label path="lastName">Last Name*:</mvc:label>
-						<mvc:input path="lastName" cssErrorClass="formFieldError"
-							placeholder="Doe" />
+				<div class="form-group">
+						<mvc:label path="lastName" class="col-sm-2 control-label">Last Name*:</mvc:label>
+						<div class="col-sm-8">
+						<mvc:input path="lastName" cssErrorClass="formFieldError" placeholder= "Doe" class="form-control"/>
 						<mvc:errors path="lastName" />
-					</p>
+				</div>
 				</div>
 
-				<div>
-					<p class="text-center">
-						<mvc:label path="email">Email Address*:</mvc:label>
-						<mvc:input path="email" cssErrorClass="formFieldError"
-							placeholder="John.Doe@example.com" />
+				<div class="form-group">
+						<mvc:label path="email" class="col-sm-2 control-label">Email Address*:</mvc:label>
+						<div class="col-sm-8">
+						<mvc:input path="email" cssErrorClass="formFieldError" placeholder= "John.Doe@example.com" class="form-control"/>
 						<mvc:errors path="email" />
-					</p>
+				</div>
 				</div>
 
 				<input type="submit" value="Submit" />

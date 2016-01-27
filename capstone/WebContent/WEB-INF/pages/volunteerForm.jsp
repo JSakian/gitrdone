@@ -64,45 +64,45 @@
 		<div class="row">
 
 			<mvc:form modelAttribute="volunteerPerson"
-				action="volunteerFormSubmission.mvc" class="gd-form">
-				<div>
-					<p class="text-center">
-						<mvc:label path="firstName">First Name*:</mvc:label>
-						<mvc:input path="firstName" cssErrorClass="formFieldError" placeholder= "John"/>
+				action="volunteerFormSubmission.mvc" class="form-horizontal">
+				<div class="form-group">
+						<mvc:label path="firstName" class="col-sm-2 control-label">First Name*:</mvc:label>
+						<div class="col-sm-8">
+						<mvc:input path="firstName" cssErrorClass="formFieldError" placeholder= "John" class="form-control"/>
 						<mvc:errors path="firstName" />
-					</p>
+						</div>
 				</div>
 
-				<div>
-					<p class="text-center">
-						<mvc:label path="lastName">Last Name*:</mvc:label>
-						<mvc:input path="lastName" cssErrorClass="formFieldError" placeholder= "Doe"/>
+				<div class="form-group">
+						<mvc:label path="lastName" class="col-sm-2 control-label">Last Name*:</mvc:label>
+						<div class="col-sm-8">
+						<mvc:input path="lastName" cssErrorClass="formFieldError" placeholder= "Doe" class="form-control"/>
 						<mvc:errors path="lastName" />
-					</p>
+				</div>
 				</div>
 
-				<div>
-					<p class="text-center">
-						<mvc:label path="email">Email Address*:</mvc:label>
-						<mvc:input path="email" cssErrorClass="formFieldError" placeholder= "John.Doe@example.com" />
+				<div class="form-group">
+						<mvc:label path="email" class="col-sm-2 control-label">Email Address*:</mvc:label>
+						<div class="col-sm-8">
+						<mvc:input path="email" cssErrorClass="formFieldError" placeholder= "John.Doe@example.com" class="form-control"/>
 						<mvc:errors path="email" />
-					</p>
+				</div>
 				</div>
 
-				<div>
-					<p class="text-center">
-						<mvc:label path="phone">Phone*:</mvc:label>
-						<mvc:input path="phone" cssErrorClass="formFieldError" placeholder= "2101234567"/>
+				<div class="form-group">
+						<mvc:label path="phone" class="col-sm-2 control-label">Phone*:</mvc:label>
+						<div class="col-sm-8">
+						<mvc:input path="phone" cssErrorClass="formFieldError" placeholder= "2101234567" class="form-control"/>
 						<mvc:errors path="phone" />
-					</p>
+				</div>
 				</div>
 
-				<div>
-					<p class="text-center">
-						<mvc:label path="comments">Comments:</mvc:label>
-						<mvc:textarea path="comments"></mvc:textarea>
+				<div class="form-group">
+						<mvc:label path="comments" class="col-sm-2 control-label">Comments:</mvc:label>
+						<div class="col-sm-8">
+						<mvc:textarea path="comments" class="form-control"></mvc:textarea>
 						<!-- 	TODO does this need an errors mvc tag???  -->
-					</p>
+				</div>
 				</div>
 
 				<p class="text-center">
@@ -115,14 +115,14 @@
 			</mvc:form>
 		</div>
 
-
-	</div>
-
 		<script
 			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
 			integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
 			crossorigin="anonymous">
 			
 		</script>
+
+	</div>
+
 </body>
 </html>
