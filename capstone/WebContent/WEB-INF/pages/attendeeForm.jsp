@@ -16,7 +16,7 @@
 <body>
 	<div class="gd-title gd-attendee-title">Signup</div>
 	<mvc:form modelAttribute="attendeePerson"
-		action="attendeeFormSubmission.mvc">
+		action="attendeeFormSubmission.mvc" class="gd-form">
 
 		<div>
 			<mvc:label path="firstName">First Name*:</mvc:label>

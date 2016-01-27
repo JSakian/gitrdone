@@ -6,3 +6,17 @@
 .gd-rsvp.hidden {
 	display: none;
 }
+
+.gd-form label {
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+}
+
+.gd-form input[type=text] {
+	width: 170px;
+}
+
+.gd-form textarea {
+	width: 170px;
+}
