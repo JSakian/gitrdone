@@ -2,7 +2,7 @@ package com.gitrdone.persistence;
 
 import java.util.List;
 
-import com.gitrdone.Event;
+import com.gitrdone.beans.Event;
 
 public interface ServiceIntf {
 	

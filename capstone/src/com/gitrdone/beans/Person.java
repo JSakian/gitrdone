@@ -1,4 +1,4 @@
-package com.gitrdone;
+package com.gitrdone.beans;
 
 import java.io.Serializable;
 import java.util.ArrayList;

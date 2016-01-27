@@ -1,6 +1,8 @@
-package com.gitrdone;
+package com.gitrdone.persistence;
 
 import java.util.List;
+
+import com.gitrdone.beans.Event;
 
 public interface EventDAOIntf {
 	void insert(Event obj);

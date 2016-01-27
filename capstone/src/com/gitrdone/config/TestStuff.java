@@ -8,8 +8,8 @@ import javax.persistence.EntityTransaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.gitrdone.Event;
-import com.gitrdone.EventDAOImpl;
+import com.gitrdone.beans.Event;
+import com.gitrdone.persistence.EventDAOImpl;
 
 public class TestStuff {
 
@@ -35,8 +35,10 @@ public class TestStuff {
 									  "Who new pool noodles were so versitl? " +
 									  "Come join others for our 40 hour workshop!");
 
-			persistEvent(event1);
-			persistEvent(event2);	
+//			persistEvent(event1);
+//			persistEvent(event2);
+			EventDAO.insert(event1);
+			EventDAO.insert(event2);
 			EventDAO.insert(event3);
 			}
 			catch (ParseException ex){
@@ -49,25 +51,26 @@ public class TestStuff {
 			}
 			}
 		
-		private void persistEvent(Event event) { 
-					
-			EntityManager em = emf.createEntityManager(); 
-			EntityTransaction trans = em.getTransaction(); 
-			
-			try { 
-			System.out.println("Starting Event: " + event.getEventName() + " transaction"); 	
-			trans.begin(); 
-			em.merge(event); 
-			trans.commit(); 
-			System.out.println("Commited Event " + event.getEventName() + " transaction successfully");
-			} 
-			catch (Exception ex) { 
-			trans.rollback(); 
-			System.out.println("Rollback due to [" + ex + "]"); 
-			} 
-			finally { 
-			em.close(); 
-	 		} 
-		} 
+	//just old code that is good reference for debugging
+//		private void persistEvent(Event event) { 
+//					
+//			EntityManager em = emf.createEntityManager(); 
+//			EntityTransaction trans = em.getTransaction(); 
+//			
+//			try { 
+//			System.out.println("Starting Event: " + event.getEventName() + " transaction"); 	
+//			trans.begin(); 
+//			em.merge(event); 
+//			trans.commit(); 
+//			System.out.println("Commited Event " + event.getEventName() + " transaction successfully");
+//			} 
+//			catch (Exception ex) { 
+//			trans.rollback(); 
+//			System.out.println("Rollback due to [" + ex + "]"); 
+//			} 
+//			finally { 
+//			em.close(); 
+//	 		} 
+//		} 
 }
 

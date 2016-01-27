@@ -1,4 +1,4 @@
-package com.gitrdone;
+package com.gitrdone.controllers;
 
 import java.text.ParseException;
 
@@ -26,11 +26,10 @@ public class EventController {
 	 */
 	@RequestMapping(value = "/events")
 		public ModelAndView processEvents() {
-		ModelAndView mv = new ModelAndView("eventPage");
+		ModelAndView mv = new ModelAndView("debug");
 		TestStuff TestStuffobj = new TestStuff();
 		TestStuffobj.populateEventTable();
 		mv.addObject("events", service.getAllEvents());
-	
 		return mv;
 	}
 }	

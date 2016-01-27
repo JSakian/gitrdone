@@ -10,8 +10,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import com.gitrdone.EventDAOImpl;
-import com.gitrdone.PersonDAOImpl;
+import com.gitrdone.persistence.EventDAOImpl;
+import com.gitrdone.persistence.PersonDAOImpl;
 import com.gitrdone.persistence.ServiceImpl;
 
 @Configuration

@@ -1,4 +1,4 @@
-package com.gitrdone;
+package com.gitrdone.controllers;
 
 import javax.validation.Valid;
 
@@ -7,6 +7,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.gitrdone.beans.Person;
 
 @Controller
 public class PersonController {

@@ -6,9 +6,7 @@ import javax.persistence.EntityManagerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.gitrdone.Event;
-import com.gitrdone.EventDAOImpl;
-import com.gitrdone.PersonDAOImpl;
+import com.gitrdone.beans.Event;
 
 public class ServiceImpl implements ServiceIntf {
 	

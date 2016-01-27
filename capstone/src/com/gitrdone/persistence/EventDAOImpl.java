@@ -1,4 +1,4 @@
-package com.gitrdone;
+package com.gitrdone.persistence;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.gitrdone.beans.Event;
 
 public class EventDAOImpl implements EventDAOIntf {
 	
