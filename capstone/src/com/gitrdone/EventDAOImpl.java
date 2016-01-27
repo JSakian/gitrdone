@@ -22,16 +22,23 @@ public class EventDAOImpl implements EventDAO {
 		trans.begin();
 		em.persist(obj);
 		trans.commit();
+		em.close();
 	}
 
 	@Override
 	public Event findById(long eventId) {
-		return emf.createEntityManager().find(Event.class, 1L);
+		EntityManager em = emf.createEntityManager();
+		Event event = em.find(Event.class, 1L);
+		em.close();
+		return event;
 	}
 
 	@Override
 	public List<Event> getAll() {
-	    return emf.createEntityManager().createQuery("SELECT e FROM Event e", Event.class).getResultList();
+		EntityManager em = emf.createEntityManager();
+		List<Event> events = em.createQuery("SELECT e FROM Event e", Event.class).getResultList();
+		em.close();
+	    return events;
 	}
 
 	@Override
@@ -41,6 +48,7 @@ public class EventDAOImpl implements EventDAO {
 		trans.begin();
 		em.merge(obj);
 		trans.commit();
+		em.close();
 	}
 
 	@Override
@@ -50,6 +58,7 @@ public class EventDAOImpl implements EventDAO {
 		trans.begin();
 		em.remove(obj);
 		trans.commit();
+		em.close();
 	}
 
 
