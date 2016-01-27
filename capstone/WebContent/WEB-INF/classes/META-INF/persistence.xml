@@ -11,7 +11,7 @@
       <property name="javax.persistence.jdbc.url"
       			value="jdbc:mysql://questjava.org/capstone"/>
       <property name="javax.persistence.jdbc.user"
-      			value="root"/>
+      			value="gitrdone"/>
       <property name="javax.persistence.jdbc.password"
       			value="gitrdone"/>
       <property name="javax.persistence.jdbc.driver"
