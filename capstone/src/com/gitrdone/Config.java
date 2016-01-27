@@ -20,7 +20,7 @@ public class Config {
 	}
 	
 	@Bean
-	public PersonDAO getPersonDAO() {
+	public PersonDAOIntf getPersonDAO() {
 		return new PersonDAOImpl();
 	}
 	

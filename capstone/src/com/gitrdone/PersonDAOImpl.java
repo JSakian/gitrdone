@@ -10,7 +10,7 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class PersonDAOImpl implements PersonDAO {
+public class PersonDAOImpl implements PersonDAOIntf {
 
 		@Autowired
 		EntityManagerFactory emf;
