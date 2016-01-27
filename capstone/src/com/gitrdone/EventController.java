@@ -29,7 +29,7 @@ public class EventController {
 		ModelAndView mv = new ModelAndView("eventPage");
 		TestStuff TestStuffobj = new TestStuff();
 		TestStuffobj.populateEventTable();
-		mv.addObject("events", service.getAllEvents())
+		mv.addObject("events", service.getAllEvents());
 	
 		return mv;
 	}
