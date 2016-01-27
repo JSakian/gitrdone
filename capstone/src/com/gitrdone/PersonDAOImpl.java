@@ -10,7 +10,7 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class PersonDAOImpl implements PersonDAO {
+public class PersonDAOImpl implements PersonDAOIntf {
 
 		@Autowired
 		EntityManagerFactory emf;
@@ -56,19 +56,20 @@ public class PersonDAOImpl implements PersonDAO {
 			return obj;
 			
 		}
-		@Override
-		public List<Person> getAll(){
-			EntityManager em = emf.createEntityManager();
-			List<Person> result = new ArrayList<>();
-			TypedQuery<Person> query = em.createQuery("SELECT e FROM EntityA e",Person.class);
-		    List<Person> results =(List<Person>)query.getResultList( );
-		    if (results != null && !results.isEmpty()) {
-		    	return results;
-		    }
-		    else
-		    	return null;
-			
-		}
+	//TODO delete for cleanup if not needed
+//		@Override
+//		public List<Person> getAll(){
+//			EntityManager em = emf.createEntityManager();
+//			List<Person> result = new ArrayList<>();
+//			TypedQuery<Person> query = em.createQuery("SELECT e FROM EntityA e",Person.class);
+//		    List<Person> results =(List<Person>)query.getResultList( );
+//		    if (results != null && !results.isEmpty()) {
+//		    	return results;
+//		    }
+//		    else
+//		    	return null;
+//			
+//		}
 		@Override
 		public boolean update(Person obj){
 			EntityManager em = emf.createEntityManager();
