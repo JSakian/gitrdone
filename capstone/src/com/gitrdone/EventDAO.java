@@ -3,10 +3,10 @@ package com.gitrdone;
 import java.util.List;
 
 public interface EventDAO {
-	boolean create(Event obj);
+	void create(Event obj);
 	Event findById(long eventId);
 	List<Event> getAll();
-	boolean update(Event obj);
-	boolean delete(Event obj);
+	void update(Event obj);
+	void delete(Event obj);
 
 }
