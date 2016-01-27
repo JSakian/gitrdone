@@ -33,7 +33,7 @@ public class EventDAOImpl implements EventDAOIntf {
 	@Override
 	public Event findById(long eventId) {
 		EntityManager em = emf.createEntityManager();
-		Event event = em.find(Event.class, 1L);
+		Event event = em.find(Event.class, eventId);
 		em.close();
 		return event;
 	}
