@@ -16,14 +16,13 @@ public class PersonDAOImpl implements PersonDAOIntf {
 		EntityManagerFactory emf;
 		
 		@Override
-		public boolean create(Person obj){
-			System.out.println("In PersonDAOImpl.create()");
+		public void insert(Person obj){
+			System.out.println("In PersonDAOImpl.insert(Person)");
 			EntityManager em = emf.createEntityManager();
 			EntityTransaction trans = em.getTransaction();
-			boolean result = true;  // optimistic
 			
 			try {
-			System.out.println("In PersonADaoJpaImpl.create()" + trans);
+			System.out.println("In PersonDAOImpl.insert()" + trans);
 				trans.begin();
 				em.persist(obj);
 				trans.commit();
@@ -31,31 +30,30 @@ public class PersonDAOImpl implements PersonDAOIntf {
 			 catch (Exception ex) {
 				trans.rollback();
 				System.out.println("Rollback due to [" + ex + "]");
-				result = false;
 			}
 			finally {
 				em.close();
+				System.out.println("Person inserted successfully");
 			}
-			return result;
-			
 		}
-		@Override
-		public Person findById(long personId){
-			EntityManager em = emf.createEntityManager();
-	        Person obj = null;
-			
-			try {
-				obj = em.find(Person.class, 1L);
-	    	    }
-			 catch (Exception ex) {
-				System.out.println("SQL Error [" + ex + "]");
-			}
-			finally {
-				em.close();
-			}
-			return obj;
-			
-		}
+	//TODO delete for cleanup if not needed
+//		@Override
+//		public Person findById(long personId){
+//			EntityManager em = emf.createEntityManager();
+//	        Person obj = null;
+//			
+//			try {
+//				obj = em.find(Person.class, 1L);
+//	    	    }
+//			 catch (Exception ex) {
+//				System.out.println("SQL Error [" + ex + "]");
+//			}
+//			finally {
+//				em.close();
+//			}
+//			return obj;
+//			
+//		}
 	//TODO delete for cleanup if not needed
 //		@Override
 //		public List<Person> getAll(){
@@ -71,12 +69,12 @@ public class PersonDAOImpl implements PersonDAOIntf {
 //			
 //		}
 		@Override
-		public boolean update(Person obj){
+		public void update(Person obj){
 			EntityManager em = emf.createEntityManager();
 			EntityTransaction trans = em.getTransaction();
-			boolean result = true;
 			
 			try {
+				System.out.println("In PersonDAOImpl.update(Person)" + trans);
 				trans.begin();
 				em.merge(obj);
 				trans.commit();
@@ -84,35 +82,31 @@ public class PersonDAOImpl implements PersonDAOIntf {
 			 catch (Exception ex) {
 				trans.rollback();
 				System.out.println("Rollback due to [" + ex + "]");
-				result = false;
 			}
 			finally {
 				em.close();
+				System.out.println("Person updated successfully");
 			}
-			return result;
-
-			
 		}
-		public boolean delete(Person obj){
+		
+		public void delete(Person obj){
 			EntityManager em = emf.createEntityManager();
 			EntityTransaction trans = em.getTransaction();
-			boolean result = true;
-			
+	
 			try {
+				System.out.println("In PersonDAOImpl.update(Person)"  + trans);
 				trans.begin();
 				em.remove(obj);
 				trans.commit();
 			}
 			 catch (Exception ex) {
 				trans.rollback();
-				System.out.println("Rollback due to [" + ex + "]");
-				result = false;
+				System.out.println("Rollback due to [" + ex + "]");			
 			}
 			finally {
 				em.close();
+				System.out.println("Person updated successfully");
 			}
-			return result;
-			
 		}
 
 }
