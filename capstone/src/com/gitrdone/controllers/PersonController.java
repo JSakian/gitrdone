@@ -2,6 +2,7 @@ package com.gitrdone.controllers;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,9 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gitrdone.beans.Person;
+import com.gitrdone.persistence.ServiceImpl;
 
 @Controller
 public class PersonController {
+	
+	@Autowired
+	ServiceImpl jpaServiceLayer;
 	
 	/**
 	 * 
@@ -55,6 +60,7 @@ public class PersonController {
 			mv.setViewName("volunteerForm"); // allow user to retry form errors
 			return mv;
 		} else {
+		jpaServiceLayer.createAnewPerson(volunteerPerson);	
 		volunteerPerson.setVolunteering(true);
 		mv.setViewName("thankYou");		
 		return mv;

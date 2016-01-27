@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.gitrdone.beans.Event;
+import com.gitrdone.beans.Person;
 
 public class ServiceImpl implements ServiceIntf {
 	
@@ -19,5 +20,9 @@ public class ServiceImpl implements ServiceIntf {
 	@Override
 	public List<Event> getAllEvents(){
 		return getAllEvents();
+	}
+	public Person createAnewPerson(Person obj){
+		persons.insert(obj);
+		return obj;
 	}
 }
