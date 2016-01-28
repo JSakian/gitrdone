@@ -38,7 +38,7 @@ public class TestStuff {
 					  				  "Who new pool noodles were so versitl? " +
 					  				  "Come join others for our 40 hour workshop!");
 	
-			Event event3 = new Event ("DAO Dinner", "2018-15-15 01:45",
+			Event event3 = new Event ("DAO Dinner", "2018-03-15 01:45",
 									  "Who new pool noodles were so versitl? " +
 									  "Come join others for our 40 hour workshop!");
 
