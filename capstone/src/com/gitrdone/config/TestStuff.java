@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.gitrdone.beans.Event;
 import com.gitrdone.persistence.EventDAOImpl;
@@ -58,6 +59,15 @@ public class TestStuff {
 				System.out.println("was there an exception?");
 			}
 			}
+		
+	
+	@RequestMapping(value = "/exceptionTest")
+	public ModelAndView throwingexeption() throws Exception {
+		ModelAndView mv = new ModelAndView("debug");
+		throw new Exception();
+		return mv;
+	}
+	
 		
 	//just old code that is good reference for debugging
 //		private void persistEvent(Event event) { 

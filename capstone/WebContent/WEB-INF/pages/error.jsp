@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Oops!</title>
 </head>
 <body>
+<h1>Looks like something went wrong</h1>
+<br>
+<h2>Screen shot this and send it in to give our tech support a good scare! They love challenges.</h2>
+${errormessage}
 
 </body>
 </html>
