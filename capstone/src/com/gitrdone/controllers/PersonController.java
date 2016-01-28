@@ -38,8 +38,9 @@ public class PersonController {
 	@RequestMapping(value = "/attendee")
 	public ModelAndView attendee(
 			@ModelAttribute("attendeePerson") Person attendeePerson) {
-		ModelAndView mv = new ModelAndView("attendeeForm");
-		mv.addObject("attendee", attendeePerson);
+		ModelAndView mv = new ModelAndView("attendeeForm", "attendeePerson",
+				new Person());
+		// mv.addObject("attendee", attendeePerson);
 		return mv;
 	}
 
@@ -90,18 +91,19 @@ public class PersonController {
 	 */
 	@RequestMapping(value = "/attendeeFormSubmission")
 	public ModelAndView processAttendeePerson(ModelAndView mv,
-											  @ModelAttribute ("attendeePerson")
-											  @Valid Person attendeePerson,
-											  BindingResult result) {
-		
-		if (result.hasErrors()) {  // validation fails; can't go on
+			@ModelAttribute("attendeePerson") @Valid Person attendeePerson,
+			BindingResult result) {
+
+		if (result.hasErrors()) { // validation fails; can't go on
 			mv.setViewName("attendeeForm"); // allow user to retry form errors
 			return mv;
 		} else {
-		jpaServiceLayer.createAnewPerson(attendeePerson);
-		attendeePerson.setVolunteering(false); //should already be false but here just as a precaution
-		mv.setViewName("thankYou");		
-		return mv;
+			jpaServiceLayer.createAnewPerson(attendeePerson);
+			attendeePerson.setVolunteering(false); // should already be false
+													// but here just as a
+													// precaution
+			mv.setViewName("thankYou");
+			return mv;
 		}
 	}
 }
