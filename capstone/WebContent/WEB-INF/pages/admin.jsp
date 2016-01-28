@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/capstone/style.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -16,6 +15,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
 	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
 	crossorigin="anonymous">
+
+<link rel="stylesheet" href="/capstone/style.css" />
 </head>
 <body>
 
@@ -51,10 +52,35 @@
 	</div>
 	<!-- /.container-fluid --> </nav> </header>
 
-	<div class="gd-title gd-thankyou-title">
-		<h1 class="text-center">Thank You</h1>
-	</div>
-	<p class="gd-thankyou-description text-center">You have been
-		subscribed to the event</p>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label">UserName</label>
+			<div class="col-sm-8">
+				<input type="email" class="form-control" id="inputEmail3"
+					placeholder="User Name">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+			<div class="col-sm-8">
+				<input type="password" class="form-control" id="inputPassword3"
+					placeholder="Password">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label> <input type="checkbox"> Remember me
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">Sign in</button>
+			</div>
+		</div>
+	</form>
+
 </body>
 </html>

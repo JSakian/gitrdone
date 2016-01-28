@@ -18,6 +18,18 @@ public class PersonController {
 	@Autowired
 	ServiceImpl jpaServiceLayer;
 	
+	@RequestMapping(value = "/home")
+	public ModelAndView form1() {
+		ModelAndView modelAndView = new ModelAndView();
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/admin")
+	public ModelAndView form2() {
+		ModelAndView modelAndView = new ModelAndView();
+		return modelAndView;
+	}
+	
 	/**
 	 * 
 	 * @param attendeePerson 
