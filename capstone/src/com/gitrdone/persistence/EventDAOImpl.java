@@ -22,21 +22,31 @@ public class EventDAOImpl implements EventDAOIntf {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction trans = em.getTransaction();
 		
+		try {
 		System.out.println("In EventDAOImpl.update(Event)" + trans);
 		trans.begin();
 		em.persist(obj);
 		trans.commit();
-		em.close();
-		System.out.println("Event " + obj.getEventName() + " inserted successfully");
+		System.out.println("Event " + obj.getEventName() + " inserted successfully");			
+		}
+		catch (Exception ex) {
+			trans.rollback();
+		
+			System.out.println("Rollback due to [" + ex + "]");	
+		}
+		finally {
+			em.close();
+		}
 	}
-
-	@Override
-	public Event findById(long eventId) {
-		EntityManager em = emf.createEntityManager();
-		Event event = em.find(Event.class, eventId);
-		em.close();
-		return event;
-	}
+	//TODO fix this 
+//	@Override
+//	public Event findById(long eventId) {
+//		EntityManager em = emf.createEntityManager();
+//		Event obj = null;
+//		obj = em.find(Event.class, eventId);
+//		em.close();
+//		return event;
+//	}
 
 	@Override
 	public List<Event> getAll() {

@@ -9,16 +9,18 @@ public class GitrdoneControllerAdvice{
 
 	@ExceptionHandler
 	public ModelAndView handleException (Exception ex) {
-		System.out.println(ex.getMessage());
+		
+		System.out.println("printing frames:");
+		
+		System.out.println("Error Message:" + ex.getMessage());
 		
 		StackTraceElement[] frames = ex.getStackTrace();
 		for (StackTraceElement frame : frames) {
 			System.out.println(frame);
 		}
 		
-		ModelAndView mv = new ModelAndView("error",
-										   "errorMessage",
-										   ex.getMessage());
+		ModelAndView mv = new ModelAndView("error");
+		mv.addObject("errorMessage", ex.getMessage());
 		return mv;
 	}
 	

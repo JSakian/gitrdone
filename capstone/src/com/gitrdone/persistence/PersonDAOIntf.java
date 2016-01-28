@@ -7,9 +7,9 @@ import com.gitrdone.beans.Person;
 public interface PersonDAOIntf {
 
 	void insert(Person obj);
+//TODO method under construction
 //	Person findById(long personId);
-//	TODO delete for cleanup if not needed
-//	List<Person> getAll();
+	List<Person> getAll();
 	void update(Person obj);
 	void delete(Person obj);
 

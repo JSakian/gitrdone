@@ -29,7 +29,7 @@ public class PersonDAOImpl implements PersonDAOIntf {
 				em.persist(obj);
 				trans.commit();
 			}
-			 catch (Exception ex) {
+			catch (Exception ex) {
 				trans.rollback();
 				System.out.println("Rollback due to [" + ex + "]");
 			}
@@ -38,14 +38,14 @@ public class PersonDAOImpl implements PersonDAOIntf {
 				System.out.println("Person " + obj.getEmail() + " inserted successfully");
 			}
 		}
-	//TODO delete for cleanup if not needed
+	//TODO fix this
 //		@Override
 //		public Person findById(long personId){
 //			EntityManager em = emf.createEntityManager();
 //	        Person obj = null;
 //			
 //			try {
-//				obj = em.find(Person.class, 1L);
+//				obj = em.find(Person.class, personId);
 //	    	    }
 //			 catch (Exception ex) {
 //				System.out.println("SQL Error [" + ex + "]");
@@ -56,20 +56,21 @@ public class PersonDAOImpl implements PersonDAOIntf {
 //			return obj;
 //			
 //		}
-	//TODO delete for cleanup if not needed
-//		@Override
-//		public List<Person> getAll(){
-//			EntityManager em = emf.createEntityManager();
-//			List<Person> result = new ArrayList<>();
-//			TypedQuery<Person> query = em.createQuery("SELECT e FROM EntityA e",Person.class);
-//		    List<Person> results =(List<Person>)query.getResultList( );
-//		    if (results != null && !results.isEmpty()) {
-//		    	return results;
-//		    }
-//		    else
-//		    	return null;
-//			
-//		}
+	
+		@Override
+		public List<Person> getAll(){
+			EntityManager em = emf.createEntityManager();
+			List<Person> result = new ArrayList<>();
+			TypedQuery<Person> query = em.createQuery("SELECT e FROM EntityA e",Person.class);
+		    List<Person> results =(List<Person>)query.getResultList( );
+		    if (results != null && !results.isEmpty()) {
+		    	return results;
+		    }
+		    else
+		    	return null;
+			
+		}
+		
 		@Override
 		public void update(Person obj){
 			EntityManager em = emf.createEntityManager();

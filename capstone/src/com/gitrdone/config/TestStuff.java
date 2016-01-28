@@ -62,10 +62,8 @@ public class TestStuff {
 		
 	
 	@RequestMapping(value = "/exceptionTest")
-	public ModelAndView throwingexeption() throws Exception {
-		ModelAndView mv = new ModelAndView("debug");
-		throw new Exception();
-		return mv;
+	public void throwingexeption() throws Exception {
+		throw new Exception("You've caught the test exception");
 	}
 	
 		
