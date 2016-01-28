@@ -2,6 +2,8 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="mvc" %>
+<%@ page import="java.util.List"%>
+<%@ page import="com.gitrdone.beans.Event"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,11 +28,7 @@ function gdToggleForm(id) {
 </script>
 </head>
 <body>
-<%
-//String[] titles = {"A", "B", "C"};
-//pageContext.setAttribute("titles", titles);
-java.util.List<com.gitrdone.beans.Event> events = (java.util.List<com.gitrdone.beans.Event>)pageContext.getAttribute("events");
-%>
+<% List<Event> events = (List<Event>) request.getAttribute("events"); %>
 <% if (events.size() != 0) { %>
 	<c:forEach var="i" begin="0" end="<%= events.size() - 1 %>">
 		<div class="gd-event-title"><c:out value="${events.get(i).eventName}" /></div>
