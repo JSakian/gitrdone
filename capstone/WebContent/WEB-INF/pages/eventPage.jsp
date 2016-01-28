@@ -1,8 +1,6 @@
 <%@ include file="includes/header.jsp" %>
 <%@ page import="java.util.List"%>
 <%@ page import="com.gitrdone.beans.Event"%>
-<<<<<<< Updated upstream
-=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +11,6 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
 	crossorigin="anonymous">
->>>>>>> Stashed changes
 
 <title>Event Calendar</title>
 <script>
@@ -22,11 +19,10 @@ function gdToggleForm(id) {
 	link.style.display = (link.style.display == "none") ? "block" : "none";
 }
 </script>
-<<<<<<< Updated upstream
+
 
 <%@ include file="includes/mid.jsp" %>
 
-=======
 </head>
 <body>
 
@@ -64,7 +60,7 @@ function gdToggleForm(id) {
 			<!-- /.container-fluid -->
 		</nav>
 	</header>
->>>>>>> Stashed changes
+
 <% List<Event> events = (List<Event>) request.getAttribute("events"); %>
 <% if (events.size() != 0) { %>
 	<c:forEach var="i" begin="0" end="<%= events.size() - 1 %>">
