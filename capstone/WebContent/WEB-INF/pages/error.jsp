@@ -10,7 +10,9 @@
 <h1>Looks like something went wrong</h1>
 <br>
 <h2>Screen shot this and send it in to give our tech support a good scare! They love challenges.</h2>
-${errormessage}
+${errorMessage}
+
+
 
 </body>
 </html>
