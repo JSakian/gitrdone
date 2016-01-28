@@ -14,30 +14,31 @@ import com.gitrdone.persistence.ServiceImpl;
 
 @Controller
 public class PersonController {
-	
+
 	@Autowired
 	ServiceImpl jpaServiceLayer;
-	
+
 	@RequestMapping(value = "/home")
 	public ModelAndView form1() {
 		ModelAndView modelAndView = new ModelAndView();
 		return modelAndView;
 	}
-	
+
 	@RequestMapping(value = "/admin")
 	public ModelAndView form2() {
 		ModelAndView modelAndView = new ModelAndView();
 		return modelAndView;
 	}
-	
+
 	/**
 	 * 
-	 * @param attendeePerson 
+	 * @param attendeePerson
 	 * @return
 	 */
 	@RequestMapping(value = "/attendee")
-	public ModelAndView attendee(@ModelAttribute ("attendeePerson") Person attendeePerson) {
-		ModelAndView mv = new ModelAndView ("attendeeForm");
+	public ModelAndView attendee(
+			@ModelAttribute("attendeePerson") Person attendeePerson) {
+		ModelAndView mv = new ModelAndView("attendeeForm");
 		mv.addObject("attendee", attendeePerson);
 		return mv;
 	}
@@ -48,10 +49,12 @@ public class PersonController {
 	 * @return
 	 */
 	@RequestMapping(value = "/volunteer")
-	public ModelAndView volunteer(@ModelAttribute ("volunteerPerson") Person volunteerPerson) {
+	public ModelAndView volunteer(
+			@ModelAttribute("volunteerPerson") Person volunteerPerson) {
 
-		ModelAndView mv = new ModelAndView ("volunteerForm", "volunteerPerson", new Person());		
-//		mv.addObject("volunteer", volunteerPerson);
+		ModelAndView mv = new ModelAndView("volunteerForm", "volunteerPerson",
+				new Person());
+		// mv.addObject("volunteer", volunteerPerson);
 		return mv;
 	}
 
@@ -64,18 +67,17 @@ public class PersonController {
 	 */
 	@RequestMapping(value = "/volunteerFormSubmission")
 	public ModelAndView processVolunteerPerson(ModelAndView mv,
-											   @ModelAttribute ("volunteerPerson") 
-											   @Valid Person volunteerPerson,
-											   BindingResult result) {
-	
-		if (result.hasErrors()) {  // validation fails; can't go on
+			@ModelAttribute("volunteerPerson") @Valid Person volunteerPerson,
+			BindingResult result) {
+
+		if (result.hasErrors()) { // validation fails; can't go on
 			mv.setViewName("volunteerForm"); // allow user to retry form errors
 			return mv;
 		} else {
-		jpaServiceLayer.createAnewPerson(volunteerPerson);	
-		volunteerPerson.setVolunteering(true);
-		mv.setViewName("thankYou");		
-		return mv;
+			jpaServiceLayer.createAnewPerson(volunteerPerson);
+			volunteerPerson.setVolunteering(true);
+			mv.setViewName("thankYou");
+			return mv;
 		}
 	}
 
@@ -96,6 +98,7 @@ public class PersonController {
 			mv.setViewName("attendeeForm"); // allow user to retry form errors
 			return mv;
 		} else {
+			jpaServiceLayer.createAnewPerson(attendeePerson);
 		attendeePerson.setVolunteering(false); //should already be false but here just as a precaution
 		mv.setViewName("thankYou");		
 		return mv;

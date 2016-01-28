@@ -26,36 +26,38 @@
 </head>
 <body>
 
-	<header class="navbar"> 
-	<nav class="navbar navbar-default">
-	<div class="container-fluid" class="navbar navbar-inverse">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Home</a>
-		</div>
+	<header class="navbar">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid" class="navbar navbar-inverse">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Home</a>
+				</div>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="active"><a
-					href="http://localhost:8080/capstone/events.mvc">Events<span
-						class="sr-only">(current)</span></a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Admin</a></li>
-			</ul>
-		</div>
-		<!-- /.navbar-collapse -->
-	</div>
-	<!-- /.container-fluid --> </nav> </header>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a
+							href="http://localhost:8080/capstone/events.mvc">Events<span
+								class="sr-only">(current)</span></a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Admin</a></li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+	</header>
 
 	<div class="container-fluid">
 		<div>
@@ -63,35 +65,40 @@
 		</div>
 		<div class="row">
 
-			<mvc:form modelAttribute="volunteerPerson"
-				action="volunteerFormSubmission.mvc" class="form-horizontal">
+			<mvc:form modelAttribute="attendeePerson"
+				action="attendeeFormSubmission.mvc" class="form-horizontal">
 				<div class="form-group">
-						<mvc:label path="firstName" class="col-sm-2 control-label">First Name*:</mvc:label>
-						<div class="col-sm-8">
-						<mvc:input path="firstName" cssErrorClass="formFieldError" placeholder= "John" class="form-control"/>
+					<mvc:label path="firstName" class="col-sm-2 control-label">First Name*:</mvc:label>
+					<div class="col-sm-8">
+						<mvc:input path="firstName" cssErrorClass="formFieldError"
+							placeholder="John" class="form-control" />
 						<mvc:errors path="firstName" />
-						</div>
+					</div>
 				</div>
 
 				<div class="form-group">
-						<mvc:label path="lastName" class="col-sm-2 control-label">Last Name*:</mvc:label>
-						<div class="col-sm-8">
-						<mvc:input path="lastName" cssErrorClass="formFieldError" placeholder= "Doe" class="form-control"/>
+					<mvc:label path="lastName" class="col-sm-2 control-label">Last Name*:</mvc:label>
+					<div class="col-sm-8">
+						<mvc:input path="lastName" cssErrorClass="formFieldError"
+							placeholder="Doe" class="form-control" />
 						<mvc:errors path="lastName" />
-				</div>
+					</div>
 				</div>
 
 				<div class="form-group">
-						<mvc:label path="email" class="col-sm-2 control-label">Email Address*:</mvc:label>
-						<div class="col-sm-8">
-						<mvc:input path="email" cssErrorClass="formFieldError" placeholder= "John.Doe@example.com" class="form-control"/>
+					<mvc:label path="email" class="col-sm-2 control-label">Email Address*:</mvc:label>
+					<div class="col-sm-8">
+						<mvc:input path="email" cssErrorClass="formFieldError"
+							placeholder="John.Doe@example.com" class="form-control" />
 						<mvc:errors path="email" />
+					</div>
 				</div>
+				<p class="text-center">
+					<input type="submit" value="Submit" />
+				</p>
+				<div class="gd-required">
+					<p class="text-center">*Required</p>
 				</div>
-
-				<input type="submit" value="Submit" />
-
-				<div class="gd-required">*Required</div>
 			</mvc:form>
 		</div>
 	</div>
