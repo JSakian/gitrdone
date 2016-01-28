@@ -13,14 +13,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gitrdone.beans.Event;
+import com.gitrdone.beans.Person;
 import com.gitrdone.persistence.EventDAOImpl;
+import com.gitrdone.persistence.PersonDAOImpl;
 
 
 @Controller
 public class TestStuff {
 
 	@Autowired
-	EventDAOImpl EventDAO;
+	EventDAOImpl eventDAO;
+	
+	@Autowired
+	PersonDAOImpl personDAO;
 	
 	@Autowired
 	EntityManagerFactory emf;
@@ -29,7 +34,6 @@ public class TestStuff {
 	@RequestMapping(value = "/genevents")
 	public void populateEventTable() {
 		try {
-			// create name, date, description
 			Event event1 = new Event ("Taco Party", "2015-01-31 13:00",
 									  "Learn the rich history of San Antonio's" +
 									  "cursed Taco Palace and enjoy a free T-shirt!" +
@@ -43,23 +47,40 @@ public class TestStuff {
 									  "Who new pool noodles were so versitl? " +
 									  "Come join others for our 40 hour workshop!");
 
-//			persistEvent(event1);
-//			persistEvent(event2);
-			System.out.println(EventDAO);
-			EventDAO.insert(event1);
-			EventDAO.insert(event2);
-			EventDAO.insert(event3);
-			}
-			catch (ParseException ex){
-				System.out.println("there's an exception: " + ex);
+			eventDAO.insert(event1);
+			eventDAO.insert(event2);
+			eventDAO.insert(event3);
+		}
+		catch (ParseException ex){
+			System.out.println("there's an exception: " + ex);
 				
-			} 
-			
-			finally {
-				System.out.println("was there an exception?");
-			}
-			}
+		} 
+	}
 		
+	
+	@RequestMapping(value="/genPersons")
+	public void populatePeronTable() {
+		
+		try {
+			Person person1 = new Person("John", "Conners", "hoax@email.fake",
+										"1234567890", "comment 1", true);
+			
+			Person person2 = new Person("Sally", "May", "Sally@May.com",
+										"0987654321", "comment 2", false);
+			
+			Person person3 = new Person("Lord", "Brian", "Doctor@Person.edu",
+										"13867239456", "comment 3", true);
+		
+			personDAO.insert(person1);
+			personDAO.insert(person2);
+			personDAO.insert(person3);
+		}
+		catch (Exception ex){
+			System.out.println("there's an exception: " + ex);
+		}
+		
+	}
+	
 	
 	@RequestMapping(value = "/exceptionTest")
 	public void throwingexeption() throws Exception {
