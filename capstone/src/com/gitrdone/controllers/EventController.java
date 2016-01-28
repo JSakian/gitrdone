@@ -26,10 +26,11 @@ public class EventController {
 	 */
 	@RequestMapping(value = "/events")
 		public ModelAndView processEvents() {
-		ModelAndView mv = new ModelAndView("debug");
-		TestStuff TestStuffobj = new TestStuff();
-		TestStuffobj.populateEventTable();
+		ModelAndView mv = new ModelAndView("eventPage");
+//		TestStuff TestStuffobj = new TestStuff();
+//		TestStuffobj.populateEventTable();
 		mv.addObject("events", service.getAllEvents());
+		System.out.println("this should have stuff: evetnslist is " + service.getAllEvents());
 		return mv;
 	}
 }	
