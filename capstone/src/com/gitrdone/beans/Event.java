@@ -24,7 +24,7 @@ public class Event implements Serializable {
 	private int eventId;
 	private String eventName;
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date dateAndTime;
+	private Date dateAndTime = new Date();
 	@Lob
 	private String description;
 	@OneToMany
@@ -38,11 +38,8 @@ public class Event implements Serializable {
 		this.eventName = eventName;
 		this.description = description;
 
-		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-	}
-
-	public void setDateAndTime(Date dateAndTime) {
-		this.dateAndTime = dateAndTime;
+		this.dateAndTime = 
+				new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(dateAndTime);
 	}
 
 	public int getEventId() {
@@ -67,8 +64,8 @@ public class Event implements Serializable {
 
 	public void setDateAndTime(String dateAndTime) throws ParseException{
 
-		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		this.dateAndTime = timeFormat.parse(dateAndTime);
+		this.dateAndTime = new SimpleDateFormat("yyyy-MM-dd HH:mm")
+						   .parse(dateAndTime);
 	}
 
 	public String getDescription() {
