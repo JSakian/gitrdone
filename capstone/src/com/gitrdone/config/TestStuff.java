@@ -7,10 +7,15 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gitrdone.beans.Event;
 import com.gitrdone.persistence.EventDAOImpl;
 
+
+@Controller
 public class TestStuff {
 
 	@Autowired
@@ -19,6 +24,8 @@ public class TestStuff {
 	@Autowired
 	EntityManagerFactory emf;
 
+	
+	@RequestMapping(value = "/genevents")
 	public void populateEventTable() {
 		try {
 			// create name, date, description
@@ -37,6 +44,7 @@ public class TestStuff {
 
 //			persistEvent(event1);
 //			persistEvent(event2);
+			System.out.println(EventDAO);
 			EventDAO.insert(event1);
 			EventDAO.insert(event2);
 			EventDAO.insert(event3);
