@@ -98,7 +98,7 @@ public class PersonController {
 			mv.setViewName("attendeeForm"); // allow user to retry form errors
 			return mv;
 		} else {
-			jpaServiceLayer.createAnewPerson(attendeePerson);
+		jpaServiceLayer.createAnewPerson(attendeePerson);
 		attendeePerson.setVolunteering(false); //should already be false but here just as a precaution
 		mv.setViewName("thankYou");		
 		return mv;

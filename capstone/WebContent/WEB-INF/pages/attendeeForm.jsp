@@ -14,8 +14,8 @@
 		</div>
 		<div class="row">
 
-			<mvc:form modelAttribute="volunteerPerson"
-				action="volunteerFormSubmission.mvc" class="form-horizontal">
+			<mvc:form modelAttribute="attendeePerson"
+				action="attendeeFormSubmission.mvc" class="form-horizontal">
 				<div class="form-group">
 						<mvc:label path="firstName" class="col-sm-2 control-label">First Name*:</mvc:label>
 						<div class="col-sm-8">
