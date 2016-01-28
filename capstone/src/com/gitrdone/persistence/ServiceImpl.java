@@ -19,7 +19,7 @@ public class ServiceImpl implements ServiceIntf {
 
 	@Override
 	public List<Event> getAllEvents(){
-		return getAllEvents();
+		return events.getAll();
 	}
 	public Person createAnewPerson(Person obj){
 		persons.insert(obj);

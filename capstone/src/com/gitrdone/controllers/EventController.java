@@ -26,9 +26,7 @@ public class EventController {
 	 */
 	@RequestMapping(value = "/events")
 		public ModelAndView processEvents() {
-		ModelAndView mv = new ModelAndView("debug");
-		TestStuff TestStuffobj = new TestStuff();
-		TestStuffobj.populateEventTable();
+		ModelAndView mv = new ModelAndView("eventPage");
 		mv.addObject("events", service.getAllEvents());
 		return mv;
 	}
