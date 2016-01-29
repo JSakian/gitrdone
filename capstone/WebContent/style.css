@@ -20,3 +20,33 @@
 .gd-form textarea {
 	width: 170px;
 }
+
+.gd-event {
+	margin-top: 30px;
+	margin-bottom: 60px;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.gd-event-title {
+	font-size: 26px;
+	display: inline;
+}
+
+.gd-event-date {
+	display: inline;
+}
+
+.gd-event-description {
+	margin-top: 10px;
+}
+
+.gd-options {
+	margin-top: 2px;
+}
+
+.gd-options a {
+	margin-right: 10px;
+	display: inline-block;
+}
