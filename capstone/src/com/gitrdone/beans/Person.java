@@ -17,6 +17,7 @@ import org.hibernate.validator.constraints.Email;
 @Entity
 public class Person implements Serializable {
 	
+
 	private static final String NUMERALS = "0123456789";
 	
 
@@ -39,6 +40,13 @@ public class Person implements Serializable {
 	private boolean volunteering = false;
 
 	public Person() {
+	}
+	@Override
+	public String toString() {
+		return "Person [personId=" + personId + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", email=" + email + ", phone="
+				+ phone + ", comments=" + comments + ", event=" + event
+				+ ", volunteering=" + volunteering + "]";
 	}
 
 	public Person(String firstName, String lastName,

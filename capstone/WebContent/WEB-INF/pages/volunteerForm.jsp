@@ -1,3 +1,5 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="mvc" %>
+
 <%@ include file="includes/header.jsp" %>
 
 <title>Volunteer Signup</title>

@@ -36,12 +36,7 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active"><a
-							href="http://localhost:8080/capstone/events.mvc">Events<span
-								class="sr-only">(current)</span></a></li>
-						<li><a href="http://localhost:8080/capstone/volunteer.mvc">Volunteer</a></li>
-					</ul>
+
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="http://localhost:8080/capstone/admin.mvc">Admin</a></li>
 					</ul>

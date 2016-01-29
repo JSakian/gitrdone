@@ -24,10 +24,11 @@ public class PersonDAOImpl implements PersonDAOIntf {
 			EntityTransaction trans = em.getTransaction();
 			
 			try {
-			System.out.println("In PersonDAOImpl.insert()" + trans);
+				System.out.println("In PersonDAOImpl.insert()" + trans);
 				trans.begin();
 				em.persist(obj);
 				trans.commit();
+				System.out.println("Person " + obj.getEmail() + " inserted successfully");
 			}
 			catch (Exception ex) {
 				trans.rollback();
@@ -35,7 +36,6 @@ public class PersonDAOImpl implements PersonDAOIntf {
 			}
 			finally {
 				em.close();
-				System.out.println("Person " + obj.getEmail() + " inserted successfully");
 			}
 		}
 	//TODO fix this

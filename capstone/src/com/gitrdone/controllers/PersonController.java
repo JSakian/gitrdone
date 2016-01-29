@@ -40,7 +40,8 @@ public class PersonController {
 			@ModelAttribute("attendeePerson") Person attendeePerson) {
 		ModelAndView mv = new ModelAndView("attendeeForm", "attendeePerson",
 				new Person());
-		// mv.addObject("attendee", attendeePerson);
+		System.out.println(attendeePerson);
+		System.out.println("person made and sent to form");
 		return mv;
 	}
 
@@ -93,9 +94,13 @@ public class PersonController {
 	public ModelAndView processAttendeePerson(ModelAndView mv,
 			@ModelAttribute("attendeePerson") @Valid Person attendeePerson,
 			BindingResult result) {
-
+			
+			System.out.println(attendeePerson + "made it to the validating controller");
+		
+		
 		if (result.hasErrors()) { // validation fails; can't go on
 			mv.setViewName("attendeeForm"); // allow user to retry form errors
+			System.out.println("attendee From has errors");
 			return mv;
 		} else {
 			jpaServiceLayer.createAnewPerson(attendeePerson);
